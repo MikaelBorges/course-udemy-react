@@ -1,24 +1,24 @@
 import { useState } from "react";
 
 function Modal(props) {
-  const title = props.title;
-  const [etat, setEtat] = useState(false);
+  const display = true;
 
-  function modalHandler() {
-    console.log("close modal");
+  function cancelHandler() {
+    console.log("cancel");
+    props.onCancel();
   }
 
-  function stateHandler() {
-    console.log("on off");
-    setEtat(!etat);
+  function confirmHandler() {
+    console.log("delete");
+    props.onConfirm();
   }
 
   return (
-    <div className={`modal ${etat ? "active" : ""}`}>
+    <div className={`modal`} onClick={cancelHandler}>
       <div className={`question`}>
         <p>sure ?</p>
-        <button onClick={modalHandler}>no</button>
-        <button onClick={modalHandler}>yes</button>
+        <button onClick={cancelHandler}>no</button>
+        <button onClick={confirmHandler}>yes</button>
       </div>
     </div>
   );
