@@ -3,11 +3,11 @@ import Modal from "./Modal";
 
 function Todo(props) {
   const title = props.title;
-  const [etat, setEtat] = useState(false);
+  const [etat, setEtat] = useState(true);
   const [existance, setExistance] = useState(true);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  function deleteHandler() {
+  function openModalHandler() {
     setModalIsOpen(true);
   }
 
@@ -15,9 +15,9 @@ function Todo(props) {
     setModalIsOpen(false);
   }
 
-  function stateHandler() {
+  const stateHandler = () => {
     setEtat(!etat);
-  }
+  };
 
   function deleteTodo() {
     setExistance(false);
@@ -30,7 +30,7 @@ function Todo(props) {
           <h2>{title}</h2>
           <div>
             <button onClick={stateHandler}>on/off</button>
-            <button onClick={deleteHandler}>delete</button>
+            <button onClick={openModalHandler}>delete</button>
           </div>
           {modalIsOpen && (
             <Modal onCancel={closeModalHandler} onConfirm={deleteTodo} />
