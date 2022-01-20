@@ -4,12 +4,10 @@ function Modal(props) {
   const display = true;
 
   function cancelHandler() {
-    console.log("cancel");
     props.onCancel();
   }
 
   function confirmHandler() {
-    console.log("delete");
     props.onConfirm();
   }
 

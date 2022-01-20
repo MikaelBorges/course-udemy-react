@@ -12,17 +12,14 @@ function Todo(props) {
   }
 
   function closeModalHandler() {
-    console.log("display modal");
     setModalIsOpen(false);
   }
 
   function stateHandler() {
-    console.log("on off");
     setEtat(!etat);
   }
 
   function deleteTodo() {
-    console.log("delete todo");
     setExistance(false);
   }
 
