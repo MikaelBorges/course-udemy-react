@@ -1,7 +1,10 @@
+
+import MeetupList from "../components/meetups/MeetupList";
+
 const DUMMY_DATA = [
   {
     id: "m1",
-    title: "This is a first meetup",
+    title: "meetup 1",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg",
     address: "Meetupstreet 5, 12345 Meetup City",
@@ -10,7 +13,34 @@ const DUMMY_DATA = [
   },
   {
     id: "m2",
-    title: "This is a second meetup",
+    title: "meetup 2",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg",
+    address: "Meetupstreet 5, 12345 Meetup City",
+    description:
+      "This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!",
+  },
+  {
+    id: "m3",
+    title: "meetup 3",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg",
+    address: "Meetupstreet 5, 12345 Meetup City",
+    description:
+      "This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!",
+  },
+  {
+    id: "m4",
+    title: "meetup 4",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg",
+    address: "Meetupstreet 5, 12345 Meetup City",
+    description:
+      "This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!",
+  },
+  {
+    id: "m5",
+    title: "meetup 5",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg",
     address: "Meetupstreet 5, 12345 Meetup City",
@@ -23,11 +53,7 @@ function AllMeetupsPage() {
   return (
     <section>
       <h1>All Meetups Page</h1>
-      <ul>
-        {DUMMY_DATA.map((meetup, index) => {
-          return <li key={index}>{meetup.title}</li>;
-        })}
-      </ul>
+      <MeetupList meetups={DUMMY_DATA} />
     </section>
   );
 }
