@@ -40,32 +40,6 @@
 /*=======================*/
 /*=======================*/
 
-.question {
-  background-color: pink;
-  padding: 20px;
-}
-
-.modal {
-  background-color: rgba(0, 0, 0, .5);
-  position: fixed;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.card {
-  background-color: red;
-  margin-bottom: 20px;
-}
-
-.card.active {
-  background-color: green;
-}
-
 ul {
   list-style-type: none;
   padding-inline-start: 0;
