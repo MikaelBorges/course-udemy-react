@@ -13,12 +13,10 @@ function MeetupItem(props) {
         <div>
           <img src={props.image} />
         </div>
-        <div>
+        <div className={styles.meetupText}>
           <h3>{props.title}</h3>
           <address>{props.address}</address>
           <p>{props.description}</p>
-        </div>
-        <div>
           <button onClick={addToFavorites}>To Favorites</button>
         </div>
       </Card>
