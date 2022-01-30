@@ -1,3 +1,8 @@
 .header {
   background-color: black;
+  padding: 0.67em;
+}
+
+.header h1 {
+  margin-block-start: 0;
 }

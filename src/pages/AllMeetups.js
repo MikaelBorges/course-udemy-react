@@ -6,7 +6,7 @@ const DUMMY_DATA = [
     id: "m1",
     title: "meetup 1",
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg",
+      "https://smallpdf.com/assets/img/material/smallpdf-logo-large.png",
     address: "Meetupstreet 5, 12345 Meetup City",
     description:
       "This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!",
@@ -15,7 +15,7 @@ const DUMMY_DATA = [
     id: "m2",
     title: "meetup 2",
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg",
+      "https://smallpdf.com/assets/img/material/smallpdf-logo-large.png",
     address: "Meetupstreet 5, 12345 Meetup City",
     description:
       "This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!",
@@ -24,7 +24,7 @@ const DUMMY_DATA = [
     id: "m3",
     title: "meetup 3",
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg",
+      "https://smallpdf.com/assets/img/material/smallpdf-logo-large.png",
     address: "Meetupstreet 5, 12345 Meetup City",
     description:
       "This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!",
@@ -33,7 +33,7 @@ const DUMMY_DATA = [
     id: "m4",
     title: "meetup 4",
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg",
+      "https://smallpdf.com/assets/img/material/smallpdf-logo-large.png",
     address: "Meetupstreet 5, 12345 Meetup City",
     description:
       "This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!",
@@ -42,7 +42,7 @@ const DUMMY_DATA = [
     id: "m5",
     title: "meetup 5",
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg",
+      "https://smallpdf.com/assets/img/material/smallpdf-logo-large.png",
     address: "Meetupstreet 5, 12345 Meetup City",
     description:
       "This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!",
