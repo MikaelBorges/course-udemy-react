@@ -1,0 +1,8 @@
+.meetup {
+  width: calc(100%/3);
+  min-width: 260px;
+}
+
+.meetupText {
+  padding: 0 1em 1em;
+}

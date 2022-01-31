@@ -1,17 +1,26 @@
-import Todo from "./components/Todo";
 import "./App.css";
+import { Route, Switch } from 'react-router-dom';
+
+import AllMeetupsPage from './pages/AllMeetups';
+import NewMeetupPage from './pages/NewMeetup';
+import FavoritesPage from './pages/Favorites';
+import Layout from './components/layout/Layout';
 
 function App() {
-  function reloadTodos() {
-    console.log("reload Todos");
-  }
   return (
-    <div className="App">
-      <h1 onClick={reloadTodos}>todos</h1>
-      <Todo title="a" />
-      <Todo title="b" />
-      <Todo title="c" />
-    </div>
+    <Layout>
+      <Switch>
+        <Route path='/' exact>
+          <AllMeetupsPage />
+        </Route>
+        <Route path='/new-meetup'>
+          <NewMeetupPage />
+        </Route>
+        <Route path='/favorites'>
+          <FavoritesPage />
+        </Route>
+      </Switch>
+    </Layout>
   );
 }
 
