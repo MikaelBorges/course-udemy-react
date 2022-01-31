@@ -3,6 +3,48 @@
   min-width: 260px;
 }
 
+.meetupImage {
+  position: relative;
+}
+
 .meetupText {
   padding: 0 1em 1em;
+}
+
+.actions {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.action {
+  border-radius: 50%;
+  border-style: solid;
+  margin-left: 5px;
+  font-size: 15px;
+}
+.action:hover {
+  cursor: pointer;
+}
+
+.favorite {
+  background-color: white;
+  border-color: orange;
+}
+
+.favorite:hover {
+  background-color: orange;
+}
+
+.activeFavorite {
+  background-color: orange;
+}
+
+.recycleBin {
+  background-color: white;
+  border-color: red;
+}
+
+.recycleBin:hover {
+  background-color: red;
 }

@@ -60,18 +60,18 @@ function AllMeetupsPage() {
     fetch(
       'https://react-getting-started-37f3c-default-rtdb.europe-west1.firebasedatabase.app/meetups.json'
     ).then(response => {
-      console.log('response', response);
       return response.json();
     }).then(data => {
-      console.log('data', data);
-      const meetups = [];
 
+      console.log('datas reçues', data);
+
+      {/* transormation de la data reçue en tableau */}
+      const meetups = [];
       for (const key in data) {
         const meetup = {
           id: key,
           ...data[key]
         };
-
         meetups.push(meetup);
       }
 
