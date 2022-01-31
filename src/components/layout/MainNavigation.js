@@ -4,7 +4,7 @@ import { useContext } from "react";
 import FavoritesContext from "../../store/favorites-context";
 import Notification from './Notification';
 
-function MainNavigation() {
+function MainNavigation(props) {
 
   const favoritesCtx = useContext(FavoritesContext);
 
@@ -15,9 +15,11 @@ function MainNavigation() {
         <ul>
           <li>
             <Link to='/'>All Meetups</Link>
+            {props.allMeetups ? <Notification notification={props.allMeetups} /> : null}
           </li>
           <li>
-            <Link to='/favorites'>Favorites</Link><Notification totalFavs={favoritesCtx.totalFavorites} />
+            <Link to='/favorites'>Favorites</Link>
+            {favoritesCtx.totalFavorites ? <Notification notification={favoritesCtx.totalFavorites} /> : null}
           </li>
           <li>
             <Link to='/new-meetup'>New Meetup</Link>
