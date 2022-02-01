@@ -8,7 +8,8 @@ function MeetupItem(props) {
   const favoritesCtx = useContext(FavoritesContext);
   const itemIsFavorite = favoritesCtx.itemIsFavorite(props.id);
 
-  function toggleFavoriteStatusHandler() {
+  function toggleFavoriteStatusHandler(e) {
+    e.stopPropagation();
     if (itemIsFavorite) {
       favoritesCtx.removeFavorite(props.id);
     } else {
@@ -22,29 +23,37 @@ function MeetupItem(props) {
     }
   }
 
-  function addToRecycleBin(id) {
+  function addToRecycleBin(e, id) {
+    e.stopPropagation();
     props.removeHandle(id);
   }
 
-  function editMeetup(id) {
+  function editMeetup(e, id) {
     console.log("editer");
+    e.stopPropagation();
+    
+  }
+
+  function viewMeetup(id) {
+    console.log("voir");
+    
   }
 
   return (
     <li className={styles.meetup}>
       <Card>
-        <div className={styles.meetupCard}>
+        <div className={styles.meetupCard} onClick={() => viewMeetup(props.id)}>
           <div className={styles.meetupImagePart}>
             <div className={styles.actions}>
               <button
                 className={`${styles.action} ${styles.edit}`}
-                onClick={() => editMeetup(props.id)}
+                onClick={(e) => editMeetup(e, props.id)}
               >
                 🖍
               </button>
               <button
                 className={`${styles.action} ${styles.recycleBin}`}
-                onClick={() => addToRecycleBin(props.id)}
+                onClick={(e) => addToRecycleBin(e, props.id)}
               >
                 🗑
               </button>
