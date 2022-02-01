@@ -33,7 +33,7 @@ function NewMeetupForm(props) {
 
         <div>
           <label htmlFor="title">Meetup Title</label>
-          <input type="text" required id="title" ref={titleInputRef} />
+          <input type="text" id="title" ref={titleInputRef} />
         </div>
 
         <div>

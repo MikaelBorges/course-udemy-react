@@ -1,9 +1,10 @@
 import styles from "./MeetupItem.module.css";
 import Card from "../ui/Card";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import FavoritesContext from "../../store/favorites-context";
 
 function MeetupItem(props) {
+  const [meetupItemText, setMeetupItemText] = useState(false);
   const favoritesCtx = useContext(FavoritesContext);
   const itemIsFavorite = favoritesCtx.itemIsFavorite(props.id);
 
@@ -32,35 +33,46 @@ function MeetupItem(props) {
   return (
     <li className={styles.meetup}>
       <Card>
-        <div className={styles.meetupImage}>
-          <div className={styles.actions}>
-            <button
-              className={`${styles.action} ${styles.edit}`}
-              onClick={() => editMeetup(props.id)}
-            >
-              🖍
-            </button>
-            <button
-              className={`${styles.action} ${styles.recycleBin}`}
-              onClick={() => addToRecycleBin(props.id)}
-            >
-              🗑
-            </button>
-            <button
-              className={`${styles.action} ${styles.favorite} ${
-                itemIsFavorite ? styles.activeFavorite : ""
+        <div className={styles.meetupCard}>
+          <div className={styles.meetupImagePart}>
+            <div className={styles.actions}>
+              <button
+                className={`${styles.action} ${styles.edit}`}
+                onClick={() => editMeetup(props.id)}
+              >
+                🖍
+              </button>
+              <button
+                className={`${styles.action} ${styles.recycleBin}`}
+                onClick={() => addToRecycleBin(props.id)}
+              >
+                🗑
+              </button>
+              <button
+                className={`${styles.action} ${styles.favorite} ${
+                  itemIsFavorite ? styles.activeFavorite : ""
+                }`}
+                onClick={toggleFavoriteStatusHandler}
+              >
+                🧡
+              </button>
+            </div>
+            <img
+              src={props.image}
+              className={`${
+                meetupItemText ? "" : styles.roundedImageMeetup
               }`}
-              onClick={toggleFavoriteStatusHandler}
-            >
-              🧡
-            </button>
+            />
           </div>
-          <img src={props.image} />
-        </div>
-        <div className={styles.meetupText}>
-          <h3>{props.title}</h3>
-          <address>{props.address}</address>
-          <p>{props.description}</p>
+          {meetupItemText && (
+            <div
+              className={styles.meetupTextPart}
+            >
+              <h3>{props.title}</h3>
+              <address>{props.address}</address>
+              <p>{props.description}</p>
+            </div>
+          )}
         </div>
       </Card>
     </li>

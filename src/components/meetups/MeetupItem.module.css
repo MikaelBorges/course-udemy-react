@@ -3,12 +3,30 @@
   min-width: 188px;
 }
 
-.meetupImage {
+.meetupCard {
+  cursor: pointer;
+}
+
+.meetup img {
+  display: block;
+  max-width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.meetup .roundedImageMeetup {
+  border-radius: 10px;
+}
+
+.meetupImagePart {
   position: relative;
 }
 
-.meetupText {
+.meetupTextPart {
   padding: 0 1em 1em;
+}
+
+.roundedImageMeetup {
+  border-radius: 10px;
 }
 
 .actions {

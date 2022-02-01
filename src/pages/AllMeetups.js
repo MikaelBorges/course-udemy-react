@@ -66,11 +66,20 @@ function AllMeetupsPage(props) {
     );
   }
 
+  /* const favoritesCtx = useContext(FavoritesContext); */
+  let content;
+  /* if (favoritesCtx.totalFavorites === 0) { */
+  if (false) {
+    content = <p>You got no favorites yet. Start adding some ?</p>;
+  } else {
+    content = <MeetupList meetups={loadedMeetups} removeMeetup={meetupToRemove} />;
+  }
+
   return (
     <section>
       <Page>
         <h1>All Meetups Page</h1>
-        <MeetupList meetups={loadedMeetups} removeMeetup={meetupToRemove} />
+        {content}
       </Page>
     </section>
   );
