@@ -1,6 +1,6 @@
 .meetup {
   width: calc(100%/3);
-  min-width: 260px;
+  min-width: 188px;
 }
 
 .meetupImage {
@@ -19,32 +19,26 @@
 
 .action {
   border-radius: 50%;
-  border-style: solid;
+  border: none;
   margin-left: 5px;
   font-size: 15px;
+  background-color: lightgray;
 }
 .action:hover {
   cursor: pointer;
 }
 
-.favorite {
-  background-color: white;
-  border-color: orange;
+.edit:hover {
+  background-color: red;
 }
 
 .favorite:hover {
   background-color: orange;
 }
-
 .activeFavorite {
   background-color: orange;
 }
 
-.recycleBin {
-  background-color: white;
-  border-color: red;
-}
-
 .recycleBin:hover {
-  background-color: red;
+  background-color: black;
 }

@@ -1,8 +1,14 @@
-import styles from './Notification.module.css';
+import styles from "./Notification.module.css";
 
 function Notification(props) {
   return (
-    <span className={styles.notification}>{props.notification}</span>
+    <span
+      className={`${styles.notification} ${
+        props.colorOfNotification ? styles.notificationFavorite : ""
+      }`}
+    >
+      {props.notification}
+    </span>
   );
 }
 

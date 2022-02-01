@@ -15,11 +15,11 @@ function MainNavigation(props) {
         <ul>
           <li>
             <Link to='/'>All Meetups</Link>
-            {props.allMeetups ? <Notification notification={props.allMeetups} /> : null}
+            {props.allMeetups ? <Notification colorOfNotification={false} notification={props.allMeetups} /> : null}
           </li>
           <li>
             <Link to='/favorites'>Favorites</Link>
-            {favoritesCtx.totalFavorites ? <Notification notification={favoritesCtx.totalFavorites} /> : null}
+            {favoritesCtx.totalFavorites ? <Notification colorOfNotification={true} notification={favoritesCtx.totalFavorites} /> : null}
           </li>
           <li>
             <Link to='/new-meetup'>New Meetup</Link>

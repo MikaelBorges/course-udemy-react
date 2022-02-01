@@ -8,8 +8,6 @@ function MeetupItem(props) {
   const itemIsFavorite = favoritesCtx.itemIsFavorite(props.id);
 
   function toggleFavoriteStatusHandler() {
-    console.log("add to favorites");
-
     if (itemIsFavorite) {
       favoritesCtx.removeFavorite(props.id);
     } else {
@@ -23,8 +21,12 @@ function MeetupItem(props) {
     }
   }
 
-  function addToRecycleBin() {
-    console.log("add to recyble bin");
+  function addToRecycleBin(id) {
+    props.removeHandle(id);
+  }
+
+  function editMeetup(id) {
+    console.log("editer");
   }
 
   return (
@@ -33,8 +35,14 @@ function MeetupItem(props) {
         <div className={styles.meetupImage}>
           <div className={styles.actions}>
             <button
+              className={`${styles.action} ${styles.edit}`}
+              onClick={() => editMeetup(props.id)}
+            >
+              🖍
+            </button>
+            <button
               className={`${styles.action} ${styles.recycleBin}`}
-              onClick={addToRecycleBin}
+              onClick={() => addToRecycleBin(props.id)}
             >
               🗑
             </button>

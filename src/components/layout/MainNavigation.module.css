@@ -4,17 +4,5 @@
 }
 
 .header h1 {
-  margin-block-start: 0;
+  margin: 0;
 }
-
-/* a:after {
-  content: '5';
-  margin-left: 10px;
-  color: black;
-  background-color: white;
-  padding: 1px 5px;
-  border-radius: 50%;
-  font-weight: bold;
-
-  text-decoration: none;
-} */

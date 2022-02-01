@@ -2,6 +2,11 @@ import MeetupItem from "./MeetupItem";
 import styles from './MeetupList.module.css';
 
 function MeetupList(props) {
+
+  function removeHandler(id) {
+    props.removeMeetup(id);
+  }
+
   return (
     <ul className={styles.allMeetups}>
       {props.meetups.map((meetup, index) => (
@@ -12,6 +17,7 @@ function MeetupList(props) {
           title={meetup.title}
           address={meetup.address}
           description={meetup.description}
+          removeHandle={removeHandler}
         />
       ))}
     </ul>
