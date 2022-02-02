@@ -1,0 +1,13 @@
+.notification {
+  margin-left: 10px;
+  color: white;
+  background-color: #444444;
+  padding: 1px 5px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.notificationFavorite {
+  background-color: orange;
+}

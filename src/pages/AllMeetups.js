@@ -1,99 +1,94 @@
 import MeetupList from "../components/meetups/MeetupList";
 import Page from "../components/ui/Page";
-import { useState, useEffect } from 'react';
-import styles from './AllMeetups.module.css';
+import { useContext, useState, useEffect } from "react";
+import styles from "./AllMeetups.module.css";
+import FavoritesContext from "../store/favorites-context";
+import FilterCards from "../components/meetups/FilterCards";
 
-const DUMMY_DATA = [
-  {
-    id: "m1",
-    title: "meetup 1",
-    image:
-      "https://smallpdf.com/assets/img/material/smallpdf-logo-large.png",
-    address: "Meetupstreet 5, 12345 City",
-    description:
-      "description 1",
-  },
-  {
-    id: "m2",
-    title: "meetup 2",
-    image:
-      "https://smallpdf.com/assets/img/material/smallpdf-logo-large.png",
-    address: "Meetupstreet 5, 12345 City",
-    description:
-      "description 2",
-  },
-  {
-    id: "m3",
-    title: "meetup 3",
-    image:
-      "https://smallpdf.com/assets/img/material/smallpdf-logo-large.png",
-    address: "Meetupstreet 5, 12345 City",
-    description:
-      "description 3",
-  },
-  {
-    id: "m4",
-    title: "meetup 4",
-    image:
-      "https://smallpdf.com/assets/img/material/smallpdf-logo-large.png",
-    address: "Meetupstreet 5, 12345 City",
-    description:
-      "description 4",
-  },
-  {
-    id: "m5",
-    title: "meetup 5",
-    image:
-      "https://smallpdf.com/assets/img/material/smallpdf-logo-large.png",
-    address: "Meetupstreet 5, 12345 City",
-    description:
-      "description 5",
-  },
-];
-
-function AllMeetupsPage() {
-
+function AllMeetupsPage(props) {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedMeetups, setLoadedMeetups] = useState([]);
+  const favoritesCtx = useContext(FavoritesContext);
+
+  function meetupToRemove(id) {
+    /* Supprime meetup en base */
+    fetch(
+      "https://react-getting-started-37f3c-default-rtdb.europe-west1.firebasedatabase.app/meetups/" +
+        id +
+        ".json",
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
+    .then((response) => {
+      if (response.ok) {
+        /* Rafraîchir la liste des meetups */
+        const meetups = loadedMeetups.filter((meetup) => meetup.id !== id);
+        setLoadedMeetups(meetups);
+        /* Rafraîchir le menu */
+        props.changeMeetups(meetups.length);
+        /* Si le meetup était un favori > rafraîchir le menu */
+        const itemIsFavorite = favoritesCtx.itemIsFavorite(id);
+        if (itemIsFavorite) {
+          favoritesCtx.removeFavorite(id);
+        }
+      } else {
+        console.warn("probleme, non supprimé en base");
+      }
+    });
+  }
 
   useEffect(() => {
     fetch(
-      'https://react-getting-started-37f3c-default-rtdb.europe-west1.firebasedatabase.app/meetups.json'
-    ).then(response => {
-      console.log('response', response);
-      return response.json();
-    }).then(data => {
-      console.log('data', data);
-      const meetups = [];
+      "https://react-getting-started-37f3c-default-rtdb.europe-west1.firebasedatabase.app/meetups.json"
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        /* transormation de la data reçue en tableau, sinon ça ne marche pas */
+        const meetups = [];
+        for (const key in data) {
+          const meetup = {
+            id: key,
+            ...data[key],
+          };
+          meetups.push(meetup);
+        }
 
-      for (const key in data) {
-        const meetup = {
-          id: key,
-          ...data[key]
-        };
-
-        meetups.push(meetup);
-      }
-
-      setIsLoading(false);
-      setLoadedMeetups(meetups);
-
-    });
+        setIsLoading(false);
+        setLoadedMeetups(meetups);
+        props.changeMeetups(meetups.length);
+      });
   }, []);
 
   if (isLoading) {
     return (
       <section>
-        <img className={styles.loading} src="https://i.stack.imgur.com/y3Hm3.gif" />
+        <img
+          className={styles.loading}
+          src="https://i.stack.imgur.com/y3Hm3.gif"
+        />
       </section>
     );
+  }
+
+  let content;
+  if (loadedMeetups.length) {
+    content = <MeetupList meetups={loadedMeetups} removeMeetup={meetupToRemove} cardView={props.cardView} />;
+  } else {
+    content = <p>You got no meetup yet. Start adding some ?</p>;
   }
 
   return (
     <section>
       <Page>
-        <h1>All Meetups Page</h1>
-        <MeetupList meetups={loadedMeetups} />
+        <h2>All Meetups Page</h2>
+        <FilterCards />
+        {content}
       </Page>
     </section>
   );

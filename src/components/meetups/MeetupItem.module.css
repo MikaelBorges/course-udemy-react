@@ -1,8 +1,66 @@
 .meetup {
   width: calc(100%/3);
-  min-width: 260px;
+  min-width: 188px;
 }
 
-.meetupText {
+.meetupCard {
+  cursor: pointer;
+}
+
+.meetup img {
+  display: block;
+  max-width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.meetup .roundedImageMeetup {
+  border-radius: 10px;
+}
+
+.meetupImagePart {
+  position: relative;
+}
+
+.roundedImageMeetup {
+  border-radius: 10px;
+}
+
+.actions {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.action {
+  border-radius: 50%;
+  border: none;
+  margin-left: 5px;
+  font-size: 15px;
+  background-color: lightgray;
+}
+.action:hover {
+  cursor: pointer;
+}
+
+.edit:hover {
+  background-color: red;
+}
+
+.favorite:hover {
+  background-color: orange;
+}
+.activeFavorite {
+  background-color: orange;
+}
+
+.recycleBin:hover {
+  background-color: #444444;
+}
+
+.meetupTextPart {
   padding: 0 1em 1em;
+}
+
+.titleMeetup {
+  margin: 20px;
 }
