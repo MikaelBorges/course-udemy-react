@@ -1,10 +1,9 @@
 import styles from "./MeetupItem.module.css";
 import Card from "../ui/Card";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import FavoritesContext from "../../store/favorites-context";
 
 function MeetupItem(props) {
-  const [meetupItemText, setMeetupItemText] = useState(false);
   const favoritesCtx = useContext(FavoritesContext);
   const itemIsFavorite = favoritesCtx.itemIsFavorite(props.id);
 
@@ -69,11 +68,11 @@ function MeetupItem(props) {
             <img
               src={props.image}
               className={`${
-                meetupItemText ? "" : styles.roundedImageMeetup
+                props.meetupItemText ? "" : styles.roundedImageMeetup
               }`}
             />
           </div>
-          {meetupItemText && (
+          {props.meetupItemText && (
             <div
               className={styles.meetupTextPart}
             >

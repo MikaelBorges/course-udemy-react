@@ -18,6 +18,7 @@ function MeetupList(props) {
           address={meetup.address}
           description={meetup.description}
           removeHandle={removeHandler}
+          meetupItemText={props.cardView}
         />
       ))}
     </ul>

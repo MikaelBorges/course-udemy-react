@@ -75,20 +75,12 @@ function AllMeetupsPage(props) {
     );
   }
 
-
-
-  /* Contextualiser le nombre total de meetups */
-  /* const favoritesCtx = useContext(FavoritesContext); */
   let content;
-  /* if (favoritesCtx.totalFavorites === 0) { */
-  if (false) {
-    content = <p>You got no meetup yet. Start adding some ?</p>;
+  if (loadedMeetups.length) {
+    content = <MeetupList meetups={loadedMeetups} removeMeetup={meetupToRemove} cardView={props.cardView} />;
   } else {
-    content = <MeetupList meetups={loadedMeetups} removeMeetup={meetupToRemove} />;
+    content = <p>You got no meetup yet. Start adding some ?</p>;
   }
-
-
-
 
   return (
     <section>
