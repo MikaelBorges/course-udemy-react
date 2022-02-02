@@ -17,6 +17,7 @@ function FavoritesPage(props) {
     <section>
       <Page>
         <h1>My Favorites Page</h1>
+        <div style={{backgroundColor: 'yellow', color: 'black'}}>filter zone</div>
         {content}
       </Page>
     </section>

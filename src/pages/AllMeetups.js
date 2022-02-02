@@ -86,6 +86,7 @@ function AllMeetupsPage(props) {
     <section>
       <Page>
         <h1>All Meetups Page</h1>
+        <div style={{backgroundColor: 'yellow', color: 'black'}}>filter zone</div>
         {content}
       </Page>
     </section>
