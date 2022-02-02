@@ -3,6 +3,7 @@ import Page from "../components/ui/Page";
 import { useContext, useState, useEffect } from "react";
 import styles from "./AllMeetups.module.css";
 import FavoritesContext from "../store/favorites-context";
+import FilterCards from "../components/meetups/FilterCards";
 
 function AllMeetupsPage(props) {
   const [isLoading, setIsLoading] = useState(true);
@@ -85,8 +86,8 @@ function AllMeetupsPage(props) {
   return (
     <section>
       <Page>
-        <h1>All Meetups Page</h1>
-        <div style={{backgroundColor: 'yellow', color: 'black'}}>filter zone</div>
+        <h2>All Meetups Page</h2>
+        <FilterCards />
         {content}
       </Page>
     </section>

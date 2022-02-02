@@ -76,7 +76,7 @@ function MeetupItem(props) {
             <div
               className={styles.meetupTextPart}
             >
-              <h3>{props.title}</h3>
+              <h3 className={styles.titleMeetup}>{props.title}</h3>
               <address>{props.address}</address>
               <p>{props.description}</p>
             </div>

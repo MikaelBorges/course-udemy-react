@@ -2,6 +2,7 @@ import Page from "../components/ui/Page";
 import { useContext } from "react";
 import FavoritesContext from "../store/favorites-context";
 import MeetupList from "../components/meetups/MeetupList";
+import FilterCards from "../components/meetups/FilterCards";
 
 function FavoritesPage(props) {
   const favoritesCtx = useContext(FavoritesContext);
@@ -16,8 +17,8 @@ function FavoritesPage(props) {
   return (
     <section>
       <Page>
-        <h1>My Favorites Page</h1>
-        <div style={{backgroundColor: 'yellow', color: 'black'}}>filter zone</div>
+        <h2>My Favorites Page</h2>
+        <FilterCards />
         {content}
       </Page>
     </section>
