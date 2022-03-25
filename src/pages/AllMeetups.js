@@ -9,6 +9,7 @@ function AllMeetupsPage(props) {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedMeetups, setLoadedMeetups] = useState([]);
   const favoritesCtx = useContext(FavoritesContext);
+  let errorMessage;
 
   function meetupToRemove(id) {
     /* Supprime meetup en base */
@@ -45,24 +46,36 @@ function AllMeetupsPage(props) {
     fetch(
       "https://react-getting-started-37f3c-default-rtdb.europe-west1.firebasedatabase.app/meetups.json"
     )
-      .then((response) => {
+    .then((response) => {
+      console.warn('response', response);
+      if (response.ok) {
         return response.json();
-      })
-      .then((data) => {
-        /* transormation de la data reçue en tableau, sinon ça ne marche pas */
-        const meetups = [];
-        for (const key in data) {
-          const meetup = {
-            id: key,
-            ...data[key],
-          };
-          meetups.push(meetup);
-        }
+      }
+      if (response.status === 401) {
+        console.error("Authentification à Firebase refusée");
+      }
+      throw new Error('Something went wrong');
+    })
+    .then((data) => {
+      console.log('data', data);
+      /* transormation de la data reçue en tableau, sinon ça ne marche pas */
+      const meetups = [];
+      for (const key in data) {
+        const meetup = {
+          id: key,
+          ...data[key],
+        };
+        meetups.push(meetup);
+      }
 
-        setIsLoading(false);
-        setLoadedMeetups(meetups);
-        props.changeMeetups(meetups.length);
-      });
+      setIsLoading(false);
+      setLoadedMeetups(meetups);
+      props.changeMeetups(meetups.length);
+    })
+    .catch((error) => {
+      errorMessage = `<p>${error}</p>`;
+      console.log('errorMessage', errorMessage);
+    });
   }, []);
 
   if (isLoading) {
