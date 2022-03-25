@@ -92,7 +92,8 @@ function AllMeetupsPage(props) {
   let content;
   if (loadedMeetups.length) {
     content = <MeetupList meetups={loadedMeetups} removeMeetup={meetupToRemove} cardView={props.cardView} />;
-  } else {
+  }
+  else {
     content = <p>You got no meetup yet. Start adding some ?</p>;
   }
 

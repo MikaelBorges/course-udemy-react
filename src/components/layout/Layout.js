@@ -4,7 +4,7 @@ import MainNavigation from './MainNavigation';
 function Layout(props) {
   return (
     <div className={styles.layout}>
-      <button>theme</button>
+      <button className={styles.themeButton}>theme</button>
       <MainNavigation allMeetups={props.meetupsLength} />
       <main>
         {props.children}

@@ -6,4 +6,7 @@ input,
 textarea {
   background-color: #23272d;
   color: #cfd9e4;
+  display: block;
+  width: 100%;
+  font-size: 1em;
 }
