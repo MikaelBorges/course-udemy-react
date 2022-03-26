@@ -7,7 +7,6 @@ import FavoritesPage from './pages/Favorites';
 import Layout from './components/layout/Layout';
 
 function App() {
-
   const [totalMeetups, setTotalMeetups] = useState(0);
 
   function changeStateMeetups(meetupsNumber) {
@@ -24,14 +23,14 @@ function App() {
     <Layout meetupsLength={totalMeetups}>
       <Switch>
         <Route path='/' exact>
-          <button onClick={cardViewToggle}>toggle card view</button>
+          <button className="toggle-card-view" onClick={cardViewToggle}>{cardViewButton ? '🧑' : '🪪'}</button>
           <AllMeetupsPage changeMeetups={changeStateMeetups} cardView={cardViewButton} />
         </Route>
         <Route path='/new-meetup'>
           <NewMeetupPage />
         </Route>
         <Route path='/favorites'>
-          <button onClick={cardViewToggle}>toggle card view</button>
+          <button className="toggle-card-view" onClick={cardViewToggle}></button>
           <FavoritesPage cardView={cardViewButton} />
         </Route>
       </Switch>

@@ -1,6 +1,7 @@
 #root {
   background-color: #787878;
   font-size: 2em;
+  font-family: 'Gilroy-SemiBold';
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -20,9 +21,50 @@ ul {
 }
 
 a {
-  color: #cfd9e4;
+  /* color: #cfd9e4; */
+  color: #ec5990;
 }
 
 button {
   font-size: 1em;
+  font-family: 'Gilroy-SemiBold';
+}
+
+.toggle-card-view {
+  border-radius: 50%;
+  width: 90px;
+  font-size: 2em;
+  border-style: solid;
+  background-color: white;
+  border-color: white;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  z-index: 1;
+}
+
+.toggle-card-view:hover {
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: 'Gilroy-SemiBold';
+  src: url('/assets/fonts/Gilroy/d2c69706-9309-415c-ba46-9369da3a3d0a.eot?#iefix');
+  src: url('/assets/fonts/Gilroy/d2c69706-9309-415c-ba46-9369da3a3d0a.eot?#iefix') format('eot'),
+      url('/assets/fonts/Gilroy/dace493d-2c1a-478b-a98e-0e73f323a856.woff2') format('woff2'),
+      url('/assets/fonts/Gilroy/a7e2bbd1-4a46-45fa-9e36-1a26e482c098.woff') format('woff'),
+      url('/assets/fonts/Gilroy/49a87d40-722b-4a8d-aa96-5159f4051bfe.ttf') format('truetype'),
+      url('/assets/fonts/Gilroy/d248e829-5afe-46cd-955f-26411a18ceab.svg#d248e829-5afe-46cd-955f-26411a18ceab') format('svg');
+}
+
+@font-face {
+    font-family: 'Gilroy-Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: url('/assets/fonts/Gilroy/e614cc7a-7369-438b-ae6b-e81a483780da.eot?#iefix');
+    src: url('/assets/fonts/Gilroy/e614cc7a-7369-438b-ae6b-e81a483780da.eot?#iefix') format('eot'),
+        url('/assets/fonts/Gilroy/ab57e807-506b-4e1d-aed1-cb2b62dd7258.woff2') format('woff2'),
+        url('/assets/fonts/Gilroy/4ac1d6d8-0dca-4d0c-9b27-89cbaaf6a542.woff') format('woff'),
+        url('/assets/fonts/Gilroy/c353d337-cd72-47c5-8939-c28d728dbc84.ttf') format('truetype'),
+        url('/assets/fonts/Gilroy/91cfd09a-4f27-4a3f-b418-395d55464a0c.svg#91cfd09a-4f27-4a3f-b418-395d55464a0c') format('svg');
 }
