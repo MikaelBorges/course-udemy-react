@@ -14,7 +14,7 @@ function App() {
     setTotalMeetups(meetupsNumber);
   }
 
-  const [cardViewButton, setCardViewButton] = useState(false);
+  const [cardViewButton, setCardViewButton] = useState(true);
 
   function cardViewToggle() {
     setCardViewButton(!cardViewButton);
@@ -24,14 +24,14 @@ function App() {
     <Layout meetupsLength={totalMeetups}>
       <Switch>
         <Route path='/' exact>
-          <button onClick={cardViewToggle}>cards view</button>
+          <button onClick={cardViewToggle}>toggle card view</button>
           <AllMeetupsPage changeMeetups={changeStateMeetups} cardView={cardViewButton} />
         </Route>
         <Route path='/new-meetup'>
           <NewMeetupPage />
         </Route>
         <Route path='/favorites'>
-          <button onClick={cardViewToggle}>cards view</button>
+          <button onClick={cardViewToggle}>toggle card view</button>
           <FavoritesPage cardView={cardViewButton} />
         </Route>
       </Switch>

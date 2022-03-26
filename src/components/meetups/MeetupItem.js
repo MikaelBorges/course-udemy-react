@@ -72,13 +72,21 @@ function MeetupItem(props) {
               }`}
             />
           </div>
-          {props.meetupItemText && (
+          {props.meetupItemText && (props.title || props.address || props.description) && (
             <div
               className={styles.meetupTextPart}
             >
-              <h3 className={styles.titleMeetup}>{props.title}</h3>
-              <address>{props.address}</address>
-              <p>{props.description}</p>
+              {props.title && (
+                <h3 className={`${styles.meetupTextElement} ${styles.titleMeetup}`}>{props.title}</h3>
+              )}
+
+              {props.address && (
+                <address className={styles.meetupTextElement}>{props.address}</address>
+              )}
+
+              {props.description && (
+                <p className={styles.meetupTextElement}>{props.description}</p>
+              )}
             </div>
           )}
         </div>

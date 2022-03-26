@@ -5,6 +5,10 @@
   width: 100%;
 }
 
+.meetupTextPart .meetupTextElement:last-child {
+  margin-bottom: 0;
+}
+
 .meetupCard {
   cursor: pointer;
 }
@@ -38,10 +42,13 @@
 
 .action {
   border-radius: 50%;
-  border: none;
+  /* border: none; */
   margin-left: 5px;
   /* font-size: 15px; */
-  background-color: lightgray;
+  background-color: white;
+  border-style: solid;
+  background-color: white;
+  border-color: white;
 }
 .action:hover {
   cursor: pointer;
@@ -63,9 +70,10 @@
 }
 
 .meetupTextPart {
-  padding: 0 1em 1em;
+  padding: 0 20px 20px;
 }
 
 .titleMeetup {
   margin: 20px;
+  /* margin: 20px 20px 0; */
 }
