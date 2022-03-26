@@ -2,12 +2,14 @@
   margin-left: 10px;
   color: white;
   background-color: #444444;
-  padding: 1px 5px;
+  /* padding: 1px 10px; */
   border-radius: 50%;
   font-weight: bold;
-  font-size: 12px;
+  /* font-size: 12px; */
+  width: 40px;
+  display: inline-block;
 }
 
 .notificationFavorite {
-  background-color: orange;
+  background-color: red;
 }

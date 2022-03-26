@@ -62,7 +62,7 @@ function MeetupItem(props) {
                 }`}
                 onClick={toggleFavoriteStatusHandler}
               >
-                🧡
+                ❤️
               </button>
             </div>
             <img

@@ -9,8 +9,8 @@
   justify-content: flex-start;
 }
 
-@media all and (max-width: 648px) {
+/* @media all and (max-width: 648px) {
   .allMeetups {
     justify-content: center;
   }
-}
+} */

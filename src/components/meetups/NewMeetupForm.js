@@ -48,7 +48,7 @@ function NewMeetupForm(props) {
 
         <div>
           <label htmlFor="description">Description</label>
-          <textarea rows="3" id="description" ref={descriptionInputRef}></textarea>
+          <textarea rows="6" id="description" ref={descriptionInputRef}></textarea>
         </div>
 
         <div>

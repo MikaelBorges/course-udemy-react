@@ -10,7 +10,7 @@ function MainNavigation(props) {
 
   return (
     <header className={styles.header}>
-      <h1>React Meetups</h1>
+      <h1>Meetups</h1>
       <nav>
         <ul>
           <li>
