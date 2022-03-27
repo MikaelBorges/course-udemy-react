@@ -3,6 +3,7 @@ import { useContext } from "react";
 import FavoritesContext from "../store/favorites-context";
 import MeetupList from "../components/meetups/MeetupList";
 import FilterCards from "../components/meetups/FilterCards";
+import styles from "./Favorites.module.css";
 
 function FavoritesPage(props) {
   const favoritesCtx = useContext(FavoritesContext);
@@ -17,7 +18,7 @@ function FavoritesPage(props) {
   return (
     <section>
       <Page>
-        <h2>My Favorites Page</h2>
+        <h2 className={styles.pageTitle}>My Favorites Page</h2>
         <FilterCards />
         {content}
       </Page>

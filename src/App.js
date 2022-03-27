@@ -5,6 +5,7 @@ import AllMeetupsPage from './pages/AllMeetups';
 import NewMeetupPage from './pages/NewMeetup';
 import FavoritesPage from './pages/Favorites';
 import Layout from './components/layout/Layout';
+import "./fonts.css";
 
 function App() {
   const [totalMeetups, setTotalMeetups] = useState(0);

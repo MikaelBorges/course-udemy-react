@@ -100,7 +100,7 @@ function AllMeetupsPage(props) {
   return (
     <section>
       <Page>
-        <h2>All Meetups Page</h2>
+        <h2 className={styles.pageTitle}>All Meetups Page</h2>
         <FilterCards />
         {content}
       </Page>

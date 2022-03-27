@@ -107,7 +107,8 @@
 
 .meetupTextPart {
   padding: 20px;
-  color: white;
+  color: black;
+  font-family: 'Gilroy-Light';
 }
 
 .meetupTextPart.darkMode {

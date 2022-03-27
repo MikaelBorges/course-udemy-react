@@ -14,7 +14,7 @@ function MainNavigation(props) {
         props.darkMode ? styles.darkMode : ""
       }`}
     >
-      <h1>Meetups</h1>
+      <h1 className={styles.appTitle}>Meetups</h1>
       <nav>
         <ul>
           <li>

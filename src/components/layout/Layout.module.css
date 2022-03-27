@@ -6,6 +6,7 @@
   color: black;
   margin: auto;
   min-height: 100vh;
+  font-family: 'Gilroy-Medium';
 }
 .layout.darkMode {
   background-color: #1E293B;
