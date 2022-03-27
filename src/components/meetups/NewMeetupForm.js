@@ -58,54 +58,64 @@ function NewMeetupForm(props) {
       >
 
         <div className={styles.blockField}>
-          <label
-            htmlFor="title"
-            className={`${
-              titleLabelAnimated ? styles.animated : ""
-            }`}
-          >
-            Title
-          </label>
+          <div className={styles.labelContainer}>
+            <label
+              htmlFor="title"
+              className={`${
+                titleLabelAnimated ? styles.animated : ""
+              }`}
+            >
+              Title
+            </label>
+          </div>
           <input onClick={handleTitleField} type="text" id="title" ref={titleInputRef} />
         </div>
 
         <div className={styles.blockField}>
-          <label
-            htmlFor="image"
-            className={`${
-              imageLabelAnimated ? styles.animated : ""
-            }`}
-          >
-            Image
-          </label>
+          <div className={styles.labelContainer}>
+            <label
+              htmlFor="image"
+              className={`${
+                imageLabelAnimated ? styles.animated : ""
+              }`}
+            >
+              Image
+            </label>
+          </div>
           <input onClick={handleImageField} type="url" required id="image" ref={imageInputRef} />
         </div>
 
         <div className={styles.blockField}>
-          <label
-            htmlFor="address"
-            className={`${
-              addressLabelAnimated ? styles.animated : ""
-            }`}
-          >
-            Address
-          </label>
+          <div className={styles.labelContainer}>
+            <label
+              htmlFor="address"
+              className={`${
+                addressLabelAnimated ? styles.animated : ""
+              }`}
+            >
+              Address
+            </label>
+          </div>
           <input onClick={handleAddresssField} type="text" id="address" ref={addressInputRef} />
         </div>
 
         <div className={styles.blockField}>
-          <label
-            htmlFor="description"
-            className={`${
-              descriptionLabelAnimated ? styles.animated : ""
-            }`}
-          >
-            Description
-          </label>
+          <div className={styles.labelContainer}>
+            <label
+              htmlFor="description"
+              className={`${
+                descriptionLabelAnimated ? styles.animated : ""
+              }`}
+            >
+              Description
+            </label>
+          </div>
           <textarea onClick={handleDescriptionField} rows="6" id="description" ref={descriptionInputRef}></textarea>
         </div>
 
-        <button className={styles.addMeetup}>📤</button>
+        <button className={`${styles.addMeetup} ${
+          props.darkMode ? styles.darkMode : ""
+        }`}>Envoyer 📤</button>
 
       </form>
     </Card>

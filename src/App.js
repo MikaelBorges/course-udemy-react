@@ -33,10 +33,12 @@ function App() {
           <button
             className={`${styles.toggleButton} ${styles.toggleCardView} ${
               themeViewButton ? styles.darkMode : ""
+            } ${
+              cardViewButton ? "" : styles.withText
             }`}
             onClick={cardViewToggle}
           >
-            {cardViewButton ? '🏞' : '🪪'}
+            {cardViewButton ? '🏞' : '🏞 + A'}
           </button>
           <AllMeetupsPage changeMeetups={changeStateMeetups} cardView={cardViewButton} darkMode={themeViewButton} />
           <button
@@ -52,10 +54,12 @@ function App() {
           <button
             className={`${styles.toggleButton} ${styles.toggleCardView} ${
               themeViewButton ? styles.darkMode : ""
+            } ${
+              cardViewButton ? "" : styles.withText
             }`}
             onClick={cardViewToggle}
           >
-            {cardViewButton ? '🏞' : '🪪'}
+            {cardViewButton ? '🏞' : '🏞 + A'}
           </button>
           <NewMeetupPage darkMode={themeViewButton} />
           <button
@@ -71,10 +75,12 @@ function App() {
           <button
             className={`${styles.toggleButton} ${styles.toggleCardView} ${
               themeViewButton ? styles.darkMode : ""
+            } ${
+              cardViewButton ? "" : styles.withText
             }`}
             onClick={cardViewToggle}
           >
-            {cardViewButton ? '🏞' : '🪪'}
+            {cardViewButton ? '🏞' : '🏞 + A'}
           </button>
           <FavoritesPage cardView={cardViewButton} darkMode={themeViewButton} />
           <button

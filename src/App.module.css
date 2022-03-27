@@ -5,9 +5,9 @@
   box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
   border: none;
   position: fixed;
-  bottom: 14px;
+  bottom: 20px;
   z-index: 1;
-  padding: 18px 22px;
+  padding: 17px 22px;
 }
 .toggleButton:hover {
   cursor: pointer;
@@ -20,4 +20,15 @@
 }
 .toggleButton.darkMode{
   background-color: #0a1120;
+}
+.withText {
+  color: black;
+  font-family: 'Times New Roman';
+  font-weight: bold;
+  /* font-style: italic; */
+  padding: 17px 26px;
+  border-radius: 50px;
+}
+.withText.darkMode {
+  color: white;
 }

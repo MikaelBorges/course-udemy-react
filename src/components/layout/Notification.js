@@ -5,6 +5,8 @@ function Notification(props) {
     <span
       className={`${styles.notification} ${
         props.colorOfNotification ? styles.notificationFavorite : ""
+      } ${
+        props.navReduced ? '' : styles.notificationReduced
       }`}
     >
       {props.notification}

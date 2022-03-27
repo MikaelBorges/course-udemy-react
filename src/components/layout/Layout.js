@@ -13,8 +13,7 @@ function Layout(props) {
         {props.children}
       </main>
       <footer className={styles.footer}>
-        <div>© 2022 mikaelborges.com</div>
-        <div>tous droits réservés</div>
+        © 2022 mikaelborges.com
       </footer>
     </div>
   );

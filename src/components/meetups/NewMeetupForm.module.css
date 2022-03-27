@@ -2,11 +2,19 @@
   padding: 1em;
   background-color: lightgray;
   color: black;
+  border-style: solid;
+  border-color: lightgray;
 }
 
 .form.darkMode {
   background-color: #15243f;
   color: #cfd9e4;
+  border-style: solid;
+  border-color: #15243f;
+}
+
+.labelContainer {
+  height: 38px;
 }
 
 .blockField {
@@ -17,17 +25,20 @@
   from {
     top: 40px;
     font-size: 30px;
+    left: 10px;
   }
   to {
-    top: 0px;
+    left: 0;
+    top: 10px;
     font-size: 20px;
   }
 }
 
 .animated {
-  top: 0px;
+  left: 0;
+  top: 10px;
   font-size: 20px;
-  animation: slide 1s ease-out 1;
+  animation: slide 0.5s ease-out 1;
 }
 
 label {
@@ -35,14 +46,33 @@ label {
   text-align: left;
   left: 10px;
   position: relative;
-
   top: 40px;
   font-size: 30px;
 }
-
+textarea {
+  font-family: 'Gilroy-Medium';
+}
 input,
 textarea {
   border-radius: 16px;
+  display: block;
+  width: 100%;
+  font-size: 1em;
+}
+
+input:not(:focus) {
+  border-style: solid;
+  border-color: white;
+}
+textarea:not(:focus) {
+  border-color: white;
+}
+.darkMode input:not(:focus) {
+  border-style: solid;
+  border-color: #15243f;
+}
+.darkMode textarea:not(:focus) {
+  border-color: #15243f;
 }
 
 .darkMode input,
@@ -50,16 +80,17 @@ textarea {
   /* background-color: #23272d; */
   background-color: #0a1120;
   color: #cfd9e4;
-  display: block;
-  width: 100%;
-  font-size: 1em;
 }
 
 .addMeetup {
   margin-top: 1em;
-  border-radius: 50%;
+  border-radius: 16px;
   background-color: white;
   box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
   border: none;
   padding: 18px 22px;
+}
+.addMeetup.darkMode {
+  background-color: #0a1120;
+  color: #cfd9e4;
 }
