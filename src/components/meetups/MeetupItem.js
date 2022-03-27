@@ -45,7 +45,7 @@ function MeetupItem(props) {
           <div className={styles.meetupImagePart}>
             <div className={styles.actions}>
               <div className={styles.actionsLeft}>
-                <button
+                {/* <button
                   className={styles.action}
                   onClick={(e) => editMeetup(e, props.id)}
                 >
@@ -56,7 +56,7 @@ function MeetupItem(props) {
                   onClick={(e) => addToRecycleBin(e, props.id)}
                 >
                   🗑
-                </button>
+                </button> */}
               </div>
               <div className={styles.actionsRight}>
                 <button

@@ -101,7 +101,7 @@ function AllMeetupsPage(props) {
     <section>
       <Page>
         <h2 className={styles.pageTitle}>All Meetups Page</h2>
-        <FilterCards />
+        <FilterCards darkMode={props.darkMode} />
         {content}
       </Page>
     </section>

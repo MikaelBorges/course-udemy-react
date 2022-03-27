@@ -35,22 +35,17 @@
 }
 
 .actions {
-  /* border-radius: 10px; */
   position: absolute;
-  bottom: -19px;
+  bottom: -34px;
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 .actionsLeft {
-  /* padding: 10px;
-  border-radius: 10px; */
   display: flex;
   /* background-color: #ec5990; */
 }
 .actionsRight {
-  /* padding: 10px;
-  border-radius: 10px; */
   display: flex;
   /* background-color: #ec5990; */
 }
@@ -62,13 +57,10 @@
 }
 .action {
   border-radius: 50%;
-  /* border: none; */
-  /* margin-left: 5px; */
-  font-size: 20px;
+  font-size: 30px;
   background-color: white;
   border: none;
-  padding: 8px 11px;
-
+  padding: 18px 22px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
