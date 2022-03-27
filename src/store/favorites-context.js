@@ -10,7 +10,15 @@ const FavoritesContext = createContext({
 
 export function FavoritesContextProvider(props) {
 
-  const [userFavorites, setUserFavorites] = useState([]);
+  // const [userFavorites, setUserFavorites] = useState([]);
+
+  const [userFavorites, setUserFavorites] = useState([{
+    address: "",
+    description: "",
+    id: "-Mz5NYEsW3ffpOvWZBkO",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/31/Saint_Andr%C3%A9_Lez_Lille.jpg",
+    title: "Saint-André-lez-Lille",
+  }]);
 
   function addFavoriteHandler(favoriteMeetup) {
     setUserFavorites( prevUserFavorites => {

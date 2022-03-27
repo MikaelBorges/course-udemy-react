@@ -39,30 +39,26 @@ function MeetupItem(props) {
   }
 
   const [first, setFirst] = useState(true);
-
+  const li = useRef();
   // let tab = [];
   useEffect(() => {
     let curOffset = li.current.offsetTop;
-    //console.log('current offsetTop', curOffset);
+    console.log('current offsetTop', curOffset);
     /* tab.push(curOffset);
-    console.log('tab', tab); */
+    console.log('tab', tab);
     console.log('first', first);
     if (first) {
       setFirst(false);
     }
     else {
       console.log('current offsetTop', curOffset);
-    }
+    } */
   }, []);
-
-  
 
   /* window.onscroll = function (e) {  
   // called when the window is scrolled.
   console.log(window.scrollY);
   } */
-
-  const li = useRef();
 
   /* var el = document.getElementsByTagName('li');
   var element = document.getElementsByTagName('li');
@@ -93,7 +89,7 @@ function MeetupItem(props) {
         if ((scrollPosition > bottomPosition) && stickyState) {
             topPart.fadeOut(250, function() {
                 $(this).removeClass('sticky');
-            });                
+            });
         }
     });
   }); */
