@@ -49,10 +49,42 @@ function App() {
           </button>
         </Route>
         <Route path='/new-meetup'>
+          <button
+            className={`${styles.toggleButton} ${styles.toggleCardView} ${
+              themeViewButton ? styles.darkMode : ""
+            }`}
+            onClick={cardViewToggle}
+          >
+            {cardViewButton ? '🏞' : '🪪'}
+          </button>
           <NewMeetupPage darkMode={themeViewButton} />
+          <button
+            className={`${styles.toggleButton} ${styles.toggleThemeView} ${
+              themeViewButton ? styles.darkMode : ""
+            }`}
+            onClick={themeViewToggle}
+          >
+            {themeViewButton ? '🌞' : '🌚'}
+          </button>
         </Route>
         <Route path='/favorites'>
+          <button
+            className={`${styles.toggleButton} ${styles.toggleCardView} ${
+              themeViewButton ? styles.darkMode : ""
+            }`}
+            onClick={cardViewToggle}
+          >
+            {cardViewButton ? '🏞' : '🪪'}
+          </button>
           <FavoritesPage cardView={cardViewButton} darkMode={themeViewButton} />
+          <button
+            className={`${styles.toggleButton} ${styles.toggleThemeView} ${
+              themeViewButton ? styles.darkMode : ""
+            }`}
+            onClick={themeViewToggle}
+          >
+            {themeViewButton ? '🌞' : '🌚'}
+          </button>
         </Route>
       </Switch>
     </Layout>
