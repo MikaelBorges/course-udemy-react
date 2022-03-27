@@ -1,0 +1,24 @@
+.toggleButton {
+  border-radius: 50%;
+  /* width: 90px; */
+  font-size: 1.5em;
+  background-color: white;
+  box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+  border: none;
+  position: fixed;
+  bottom: 10px;
+  z-index: 1;
+  padding: 15px 20px;
+}
+.toggleButton:hover {
+  cursor: pointer;
+}
+.toggleThemeView {
+  right: 10px;
+}
+.toggleCardView {
+  left: 10px;
+}
+.toggleButton.darkMode{
+  background-color: black;
+}

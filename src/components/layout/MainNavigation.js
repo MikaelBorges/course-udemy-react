@@ -9,8 +9,12 @@ function MainNavigation(props) {
   const favoritesCtx = useContext(FavoritesContext);
 
   return (
-    <header className={styles.header}>
-      <h1>Meetups</h1>
+    <header
+      className={`${styles.header} ${
+        props.darkMode ? styles.darkMode : ""
+      }`}
+    >
+      <h1 className={styles.appTitle}>Meetups</h1>
       <nav>
         <ul>
           <li>

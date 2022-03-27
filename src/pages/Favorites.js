@@ -3,6 +3,7 @@ import { useContext } from "react";
 import FavoritesContext from "../store/favorites-context";
 import MeetupList from "../components/meetups/MeetupList";
 import FilterCards from "../components/meetups/FilterCards";
+import styles from "./Favorites.module.css";
 
 function FavoritesPage(props) {
   const favoritesCtx = useContext(FavoritesContext);
@@ -11,13 +12,13 @@ function FavoritesPage(props) {
   if (favoritesCtx.totalFavorites === 0) {
     content = <p>You got no favorites yet. Start adding some ?</p>;
   } else {
-    content = <MeetupList meetups={favoritesCtx.favorites} cardView={props.cardView} />;
+    content = <MeetupList meetups={favoritesCtx.favorites} cardView={props.cardView} darkMode={props.darkMode} />;
   }
 
   return (
     <section>
       <Page>
-        <h2>My Favorites Page</h2>
+        <h2 className={styles.pageTitle}>My Favorites Page</h2>
         <FilterCards />
         {content}
       </Page>

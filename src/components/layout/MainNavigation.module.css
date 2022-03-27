@@ -1,5 +1,11 @@
 .header {
-  background-color: black;
-  padding: 0.67em;
+  background-color: #0a1120;
+  padding: 1em;
+  color: #cfd9e4;
 }
-
+.header.darkMode {
+  color:#ec5990;
+}
+.appTitle {
+  font-family: 'Gilroy-ExtraBold';
+}

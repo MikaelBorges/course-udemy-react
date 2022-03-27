@@ -29,7 +29,12 @@ function NewMeetupForm(props) {
 
   return (
     <Card>
-      <form className={styles.form} onSubmit={submitHandler}>
+      <form
+        className={`${styles.form} ${
+          props.darkMode ? styles.darkMode : ""
+        }`}
+        onSubmit={submitHandler}
+      >
 
         <div>
           <label htmlFor="title">Meetup Title</label>
@@ -51,9 +56,7 @@ function NewMeetupForm(props) {
           <textarea rows="6" id="description" ref={descriptionInputRef}></textarea>
         </div>
 
-        <div>
-          <button>Add meetup</button>
-        </div>
+        <button className={styles.addMeetup}>Add meetup</button>
 
       </form>
     </Card>

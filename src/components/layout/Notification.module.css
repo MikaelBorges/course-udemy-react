@@ -1,11 +1,12 @@
 .notification {
   margin-left: 10px;
   color: white;
-  background-color: #444444;
-  /* padding: 1px 10px; */
+  /* background-color: #444444;
+  padding: 1px 10px;
+  font-size: 12px;  */
   border-radius: 50%;
   font-weight: bold;
-  /* font-size: 12px; */
+  background-color: #ec5990;
   width: 40px;
   display: inline-block;
 }

@@ -19,6 +19,7 @@ function MeetupList(props) {
           description={meetup.description}
           removeHandle={removeHandler}
           meetupItemText={props.cardView}
+          darkMode={props.darkMode}
         />
       ))}
     </ul>
