@@ -16,6 +16,9 @@
   top: 0;
   z-index: 1;
 }
+.container.darkMode .bar {
+  background-color: black;
+}
 .container .bar {
   color: white;
   border-radius: 10px;

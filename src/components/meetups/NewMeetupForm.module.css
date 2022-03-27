@@ -5,20 +5,50 @@
 }
 
 .form.darkMode {
-  background-color: #0a1120;
+  background-color: #15243f;
   color: #cfd9e4;
+}
+
+.blockField {
+  margin: 10px 0;
+}
+
+@keyframes slide {
+  from {
+    top: 40px;
+    font-size: 30px;
+  }
+  to {
+    top: 0px;
+    font-size: 20px;
+  }
+}
+
+.animated {
+  top: 0px;
+  font-size: 20px;
+  animation: slide 1s ease-out 1;
+}
+
+label {
+  display: block;
+  text-align: left;
+  left: 10px;
+  position: relative;
+
+  top: 40px;
+  font-size: 30px;
 }
 
 input,
 textarea {
-  display: block;
-  width: 100%;
-  font-size: 1em;
+  border-radius: 16px;
 }
 
 .darkMode input,
 .darkMode textarea {
-  background-color: #23272d;
+  /* background-color: #23272d; */
+  background-color: #0a1120;
   color: #cfd9e4;
   display: block;
   width: 100%;
@@ -26,5 +56,10 @@ textarea {
 }
 
 .addMeetup {
-  margin: 20px 0;
+  margin-top: 1em;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+  border: none;
+  padding: 18px 22px;
 }

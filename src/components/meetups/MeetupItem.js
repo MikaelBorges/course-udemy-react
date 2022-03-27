@@ -46,13 +46,17 @@ function MeetupItem(props) {
             <div className={styles.actions}>
               <div className={styles.actionsLeft}>
                 {/* <button
-                  className={styles.action}
+                  className={`${styles.action} ${
+                    props.darkMode ? styles.darkMode : ""
+                  }`}
                   onClick={(e) => editMeetup(e, props.id)}
                 >
                   🖍
                 </button>
                 <button
-                  className={styles.action}
+                  className={`${styles.action} ${
+                    props.darkMode ? styles.darkMode : ""
+                  }`}
                   onClick={(e) => addToRecycleBin(e, props.id)}
                 >
                   🗑
