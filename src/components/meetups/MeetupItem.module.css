@@ -6,7 +6,8 @@
 }
 
 .meetupTextPart .meetupTextElement {
-  margin-top: 20px;
+  margin: 20px 0;
+  font-size: 1em;
 }
 
 /* .meetupCard {
@@ -50,20 +51,21 @@
   /* background-color: #ec5990; */
 }
 .actionsLeft .action {
-  margin-left: 10px;
+  margin-left: 20px;
 }
 .actionsRight .action {
-  margin-right: 10px;
+  margin-right: 20px;
 }
 .action {
   border-radius: 50%;
-  font-size: 30px;
   background-color: white;
   border: none;
   padding: 18px 22px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-
+.action.darkMode {
+  background-color: #0a1120;
+}
 .action:hover {
   cursor: pointer;
   /* background-color: #ec5990; */
@@ -89,8 +91,8 @@
   background-color: #ec5990;
 } */
 
-.activeFavorite {
-  background-color: #ec5990;
+.action.activeFavorite {
+  background-color: red;
 }
 
 /* .recycleBin:hover {

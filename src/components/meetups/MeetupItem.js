@@ -61,6 +61,8 @@ function MeetupItem(props) {
               <div className={styles.actionsRight}>
                 <button
                   className={`${styles.action} ${
+                    props.darkMode ? styles.darkMode : ""
+                  } ${
                     itemIsFavorite ? styles.activeFavorite : ""
                   }`}
                   onClick={toggleFavoriteStatusHandler}
