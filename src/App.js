@@ -1,4 +1,4 @@
-import "./App.css";
+import styles from './App.module.css';
 import { Route, Switch } from 'react-router-dom';
 import { useState } from 'react';
 import AllMeetupsPage from './pages/AllMeetups';
@@ -14,24 +14,44 @@ function App() {
   }
 
   const [cardViewButton, setCardViewButton] = useState(true);
+  const [themeViewButton, setThemeCardViewButton] = useState(true);
 
   function cardViewToggle() {
     setCardViewButton(!cardViewButton);
   }
 
+  function themeViewToggle() {
+    setThemeCardViewButton(!themeViewButton);
+    
+  }
+
   return (
-    <Layout meetupsLength={totalMeetups}>
+    <Layout meetupsLength={totalMeetups} darkMode={themeViewButton}>
       <Switch>
         <Route path='/' exact>
-          <button className="toggle-card-view" onClick={cardViewToggle}>{cardViewButton ? '🧑' : '🪪'}</button>
-          <AllMeetupsPage changeMeetups={changeStateMeetups} cardView={cardViewButton} />
+          <button
+            className={`${styles.toggleButton} ${styles.toggleCardView} ${
+              themeViewButton ? styles.darkMode : ""
+            }`}
+            onClick={cardViewToggle}
+          >
+            {cardViewButton ? '🏞' : '🪪'}
+          </button>
+          <AllMeetupsPage changeMeetups={changeStateMeetups} cardView={cardViewButton} darkMode={themeViewButton} />
+          <button
+            className={`${styles.toggleButton} ${styles.toggleThemeView} ${
+              themeViewButton ? styles.darkMode : ""
+            }`}
+            onClick={themeViewToggle}
+          >
+            {themeViewButton ? '🌞' : '🌚'}
+          </button>
         </Route>
         <Route path='/new-meetup'>
-          <NewMeetupPage />
+          <NewMeetupPage darkMode={themeViewButton} />
         </Route>
         <Route path='/favorites'>
-          <button className="toggle-card-view" onClick={cardViewToggle}></button>
-          <FavoritesPage cardView={cardViewButton} />
+          <FavoritesPage cardView={cardViewButton} darkMode={themeViewButton} />
         </Route>
       </Switch>
     </Layout>

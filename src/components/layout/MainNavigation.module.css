@@ -1,6 +1,8 @@
 .header {
   background-color: #0a1120;
-  padding: 0.67em;
-  color: #ec5990;
+  padding: 1em;
+  color: #cfd9e4;
 }
-
+.header.darkMode {
+  color:#ec5990;
+}

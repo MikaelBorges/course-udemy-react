@@ -5,13 +5,13 @@
   width: 100%;
 }
 
-.meetupTextPart .meetupTextElement:last-child {
-  margin-bottom: 0;
+.meetupTextPart .meetupTextElement {
+  margin-top: 20px;
 }
 
-.meetupCard {
+/* .meetupCard {
   cursor: pointer;
-}
+} */
 
 .meetup img {
   display: block;
@@ -35,45 +35,81 @@
 }
 
 .actions {
+  /* border-radius: 10px; */
   position: absolute;
-  right: 5px;
-  top: 5px;
+  bottom: -19px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
-
+.actionsLeft {
+  /* padding: 10px;
+  border-radius: 10px; */
+  display: flex;
+  /* background-color: #ec5990; */
+}
+.actionsRight {
+  /* padding: 10px;
+  border-radius: 10px; */
+  display: flex;
+  /* background-color: #ec5990; */
+}
+.actionsLeft .action {
+  margin-left: 10px;
+}
+.actionsRight .action {
+  margin-right: 10px;
+}
 .action {
   border-radius: 50%;
   /* border: none; */
-  margin-left: 5px;
-  /* font-size: 15px; */
+  /* margin-left: 5px; */
+  font-size: 20px;
   background-color: white;
-  border-style: solid;
-  background-color: white;
-  border-color: white;
+  border: none;
+  padding: 8px 11px;
+
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
 .action:hover {
   cursor: pointer;
+  /* background-color: #ec5990; */
 }
 
-.edit:hover {
-  background-color: red;
-}
+/* .action:hover, .action:active{
+  background-color: #ec5990;
+} */
 
-.favorite:hover {
-  background-color: red;
-}
+/* .action:hover:focus {
+  background-color: white;
+} */
+
+/* .action:hover:visited {
+  background-color: white;
+} */
+
+/* .action:hover, .action:active{
+  background-color: #ec5990;
+} */
+
+/* .edit:hover {
+  background-color: #ec5990;
+} */
+
 .activeFavorite {
-  background-color: red;
+  background-color: #ec5990;
 }
 
-.recycleBin:hover {
-  background-color: #444444;
-}
+/* .recycleBin:hover {
+  background-color: #ec5990;
+} */
 
 .meetupTextPart {
-  padding: 0 20px 20px;
+  padding: 20px;
+  color: white;
 }
 
-.titleMeetup {
-  margin: 20px;
-  /* margin: 20px 20px 0; */
+.meetupTextPart.darkMode {
+  color: #ec5990;
 }

@@ -11,7 +11,7 @@ function FavoritesPage(props) {
   if (favoritesCtx.totalFavorites === 0) {
     content = <p>You got no favorites yet. Start adding some ?</p>;
   } else {
-    content = <MeetupList meetups={favoritesCtx.favorites} cardView={props.cardView} />;
+    content = <MeetupList meetups={favoritesCtx.favorites} cardView={props.cardView} darkMode={props.darkMode} />;
   }
 
   return (

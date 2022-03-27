@@ -3,12 +3,19 @@ import MainNavigation from './MainNavigation';
 
 function Layout(props) {
   return (
-    <div className={styles.layout}>
-      {/* <button className={styles.themeButton}>theme 👷‍♂️</button> */}
-      <MainNavigation allMeetups={props.meetupsLength} />
+    <div
+      className={`${styles.layout} ${
+        props.darkMode ? styles.darkMode : ""
+      }`}
+    >
+      <MainNavigation allMeetups={props.meetupsLength} darkMode={props.darkMode} />
       <main>
         {props.children}
       </main>
+      <footer className={styles.footer}>
+        <div>© 2022 mikaelborges.com</div>
+        <div>tous droits réservés</div>
+      </footer>
     </div>
   );
 }

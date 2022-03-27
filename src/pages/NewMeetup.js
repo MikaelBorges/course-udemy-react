@@ -2,7 +2,7 @@ import NewMeetupForm from "../components/meetups/NewMeetupForm";
 import Page from "../components/ui/Page";
 import { useHistory } from "react-router-dom";
 
-function NewMeetupPage() {
+function NewMeetupPage(props) {
   const history = useHistory();
 
   function addMeetupHandler(meetupData) {
@@ -28,7 +28,7 @@ function NewMeetupPage() {
     <section>
       <Page>
         <h2>New Meetup Page</h2>
-        <NewMeetupForm onAddMeetup={addMeetupHandler} />
+        <NewMeetupForm onAddMeetup={addMeetupHandler} darkMode={props.darkMode} />
       </Page>
     </section>
   );

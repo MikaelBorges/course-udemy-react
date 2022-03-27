@@ -40,30 +40,34 @@ function MeetupItem(props) {
 
   return (
     <li className={styles.meetup}>
-      <Card>
+      <Card darkMode={props.darkMode}>
         <div className={styles.meetupCard} onClick={() => viewMeetup(props.id)}>
           <div className={styles.meetupImagePart}>
             <div className={styles.actions}>
-              <button
-                className={`${styles.action} ${styles.edit}`}
-                onClick={(e) => editMeetup(e, props.id)}
-              >
-                🖍
-              </button>
-              <button
-                className={`${styles.action} ${styles.recycleBin}`}
-                onClick={(e) => addToRecycleBin(e, props.id)}
-              >
-                🗑
-              </button>
-              <button
-                className={`${styles.action} ${styles.favorite} ${
-                  itemIsFavorite ? styles.activeFavorite : ""
-                }`}
-                onClick={toggleFavoriteStatusHandler}
-              >
-                ❤️
-              </button>
+              <div className={styles.actionsLeft}>
+                <button
+                  className={styles.action}
+                  onClick={(e) => editMeetup(e, props.id)}
+                >
+                  🖍
+                </button>
+                <button
+                  className={styles.action}
+                  onClick={(e) => addToRecycleBin(e, props.id)}
+                >
+                  🗑
+                </button>
+              </div>
+              <div className={styles.actionsRight}>
+                <button
+                  className={`${styles.action} ${
+                    itemIsFavorite ? styles.activeFavorite : ""
+                  }`}
+                  onClick={toggleFavoriteStatusHandler}
+                >
+                  ❤️
+                </button>
+              </div>
             </div>
             <img
               src={props.image}
@@ -74,7 +78,9 @@ function MeetupItem(props) {
           </div>
           {props.meetupItemText && (props.title || props.address || props.description) && (
             <div
-              className={styles.meetupTextPart}
+              className={`${styles.meetupTextPart} ${
+                props.darkMode ? styles.darkMode : ""
+              }`}
             >
               {props.title && (
                 <h3 className={`${styles.meetupTextElement} ${styles.titleMeetup}`}>{props.title}</h3>

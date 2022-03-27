@@ -1,12 +1,30 @@
 .form {
   padding: 1em;
+  background-color: lightgray;
+  color: black;
+}
+
+.form.darkMode {
+  background-color: #0a1120;
+  color: #cfd9e4;
 }
 
 input,
 textarea {
+  display: block;
+  width: 100%;
+  font-size: 1em;
+}
+
+.darkMode input,
+.darkMode textarea {
   background-color: #23272d;
   color: #cfd9e4;
   display: block;
   width: 100%;
   font-size: 1em;
+}
+
+.addMeetup {
+  margin: 20px 0;
 }
