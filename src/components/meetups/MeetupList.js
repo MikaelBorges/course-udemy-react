@@ -1,5 +1,8 @@
 import MeetupItem from "./MeetupItem";
 import styles from './MeetupList.module.css';
+import {useEffect,useRef} from 'react';
+
+let saveOldScroll = 0;
 
 function MeetupList(props) {
 
@@ -7,10 +10,38 @@ function MeetupList(props) {
     props.removeMeetup(id);
   }
 
+  const ul = useRef();
+  console.log('ul.current', ul.current?.scrollTop)
+
+
+
+  useEffect(() => {
+    if(!!window.IntersectionObserver){
+      let observer = new IntersectionObserver((entries, observer) => { 
+        entries.forEach(entry => {
+          console.log(entry);
+          console.log(window.scrollY);
+          const direction = window.scrollY > saveOldScroll ? 'down' : 'up';
+          console.log('direction', direction)
+          if (entry.isIntersecting) {
+            console.log('nav réduite')
+          }
+          if (!entry.isIntersecting && direction === 'up') {
+            console.log('nav agrandie')
+          }
+          saveOldScroll = window.scrollY;
+        });
+      });
+      
+      document.querySelectorAll('.test-1').forEach(img => { observer.observe(img) });
+    }
+  }, []);
+
   return (
-    <ul className={styles.allMeetups}>
+    <ul className={styles.allMeetups} ref={ul}>
       {props.meetups.map((meetup, index) => (
         <MeetupItem
+          index={index}
           key={index}
           id={meetup.id}
           image={meetup.image}

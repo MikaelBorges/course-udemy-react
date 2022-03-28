@@ -3,6 +3,8 @@ import Card from "../ui/Card";
 import { useContext, useRef, useEffect, useState } from "react";
 import FavoritesContext from "../../store/favorites-context";
 
+let tab = [];
+
 function MeetupItem(props) {
   const favoritesCtx = useContext(FavoritesContext);
   const itemIsFavorite = favoritesCtx.itemIsFavorite(props.id);
@@ -38,15 +40,16 @@ function MeetupItem(props) {
     
   }
 
-  const [first, setFirst] = useState(true);
+  // const [first, setFirst] = useState(true);
   const li = useRef();
-  // let tab = [];
+  
   useEffect(() => {
     let curOffset = li.current.offsetTop;
     console.log('current offsetTop', curOffset);
-    /* tab.push(curOffset);
+    tab.push(curOffset);
     console.log('tab', tab);
-    console.log('first', first);
+
+    /* console.log('first', first);
     if (first) {
       setFirst(false);
     }
@@ -95,13 +98,13 @@ function MeetupItem(props) {
   }); */
 
   return (
-    <li className={styles.meetup} ref={li}>
+    <li className={`${styles.meetup} test-${props.index}`} ref={li}>
       <Card darkMode={props.darkMode}>
         <div className={styles.meetupCard} onClick={() => viewMeetup(props.id)}>
           <div className={styles.meetupImagePart}>
             <div className={styles.actions}>
               <div className={styles.actionsLeft}>
-                {/* <button
+                <button
                   className={`${styles.action} ${
                     props.darkMode ? styles.darkMode : ""
                   }`}
@@ -116,7 +119,7 @@ function MeetupItem(props) {
                   onClick={(e) => addToRecycleBin(e, props.id)}
                 >
                   🗑
-                </button> */}
+                </button>
               </div>
               <div className={styles.actionsRight}>
                 <button
