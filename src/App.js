@@ -9,9 +9,14 @@ import "./fonts.css";
 
 function App() {
   const [totalMeetups, setTotalMeetups] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
   function changeStateMeetups(meetupsNumber) {
     setTotalMeetups(meetupsNumber);
+  }
+
+  function changeStateLoading(stateOfLoad) {
+    setIsLoading(stateOfLoad);
   }
 
   const [cardViewButton, setCardViewButton] = useState(true);
@@ -27,7 +32,7 @@ function App() {
   }
 
   return (
-    <Layout meetupsLength={totalMeetups} darkMode={themeViewButton}>
+    <Layout isLoading={isLoading} meetupsLength={totalMeetups} darkMode={themeViewButton}>
       <Switch>
         <Route path='/' exact>
           <button
@@ -40,7 +45,7 @@ function App() {
           >
             {cardViewButton ? '🏞' : '🏞 + A'}
           </button>
-          <AllMeetupsPage changeMeetups={changeStateMeetups} cardView={cardViewButton} darkMode={themeViewButton} />
+          <AllMeetupsPage isLoading={isLoading} changeLoading={changeStateLoading} changeMeetups={changeStateMeetups} cardView={cardViewButton} darkMode={themeViewButton} />
           <button
             className={`${styles.toggleButton} ${styles.toggleThemeView} ${
               themeViewButton ? styles.darkMode : ""

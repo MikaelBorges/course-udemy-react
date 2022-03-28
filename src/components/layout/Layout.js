@@ -12,9 +12,12 @@ function Layout(props) {
       <main>
         {props.children}
       </main>
-      <footer className={styles.footer}>
-        © 2022 mikaelborges.com
-      </footer>
+      {!props.isLoading && (
+        <footer className={styles.footer}>
+          © 2022 mikaelborges.com
+        </footer>
+      )}
+      
     </div>
   );
 }

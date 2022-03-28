@@ -104,7 +104,7 @@ function MeetupItem(props) {
           <div className={styles.meetupImagePart}>
             <div className={styles.actions}>
               <div className={styles.actionsLeft}>
-                <button
+                {/* <button
                   className={`${styles.action} ${
                     props.darkMode ? styles.darkMode : ""
                   }`}
@@ -119,7 +119,7 @@ function MeetupItem(props) {
                   onClick={(e) => addToRecycleBin(e, props.id)}
                 >
                   🗑
-                </button>
+                </button> */}
               </div>
               <div className={styles.actionsRight}>
                 <button

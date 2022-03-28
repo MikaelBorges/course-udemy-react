@@ -6,7 +6,6 @@ import FavoritesContext from "../store/favorites-context";
 import FilterCards from "../components/meetups/FilterCards";
 
 function AllMeetupsPage(props) {
-  const [isLoading, setIsLoading] = useState(true);
   const [loadedMeetups, setLoadedMeetups] = useState([]);
   const favoritesCtx = useContext(FavoritesContext);
   let errorMessage;
@@ -68,7 +67,7 @@ function AllMeetupsPage(props) {
         meetups.push(meetup);
       }
 
-      setIsLoading(false);
+      props.changeLoading(false);
       setLoadedMeetups(meetups);
       props.changeMeetups(meetups.length);
     })
@@ -78,7 +77,7 @@ function AllMeetupsPage(props) {
     });
   }, []);
 
-  if (isLoading) {
+  if (props.isLoading) {
     return (
       <section>
         <img
