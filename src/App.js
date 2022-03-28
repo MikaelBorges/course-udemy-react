@@ -10,6 +10,9 @@ import "./fonts.css";
 function App() {
   const [totalMeetups, setTotalMeetups] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [isBigNav, setIsBigNav] = useState(true);
+  const [cardViewButton, setCardViewButton] = useState(true);
+  const [themeViewButton, setThemeCardViewButton] = useState(true);
 
   function changeStateMeetups(meetupsNumber) {
     setTotalMeetups(meetupsNumber);
@@ -18,9 +21,6 @@ function App() {
   function changeStateLoading(stateOfLoad) {
     setIsLoading(stateOfLoad);
   }
-
-  const [cardViewButton, setCardViewButton] = useState(true);
-  const [themeViewButton, setThemeCardViewButton] = useState(true);
 
   function cardViewToggle() {
     setCardViewButton(!cardViewButton);
@@ -31,8 +31,12 @@ function App() {
     
   }
 
+  function changeStateNav(stateOfNav) {
+    setIsBigNav(stateOfNav);
+  }
+
   return (
-    <Layout isLoading={isLoading} meetupsLength={totalMeetups} darkMode={themeViewButton}>
+    <Layout isBigNav={isBigNav} isLoading={isLoading} meetupsLength={totalMeetups} darkMode={themeViewButton}>
       <Switch>
         <Route path='/' exact>
           <button
@@ -45,7 +49,7 @@ function App() {
           >
             {cardViewButton ? '🏞' : '🏞 + A'}
           </button>
-          <AllMeetupsPage isLoading={isLoading} changeLoading={changeStateLoading} changeMeetups={changeStateMeetups} cardView={cardViewButton} darkMode={themeViewButton} />
+          <AllMeetupsPage changeNav={changeStateNav} changeLoading={changeStateLoading} changeMeetups={changeStateMeetups} cardView={cardViewButton} darkMode={themeViewButton} />
           <button
             className={`${styles.toggleButton} ${styles.toggleThemeView} ${
               themeViewButton ? styles.darkMode : ""

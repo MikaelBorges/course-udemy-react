@@ -8,7 +8,7 @@ function Layout(props) {
         props.darkMode ? styles.darkMode : ""
       }`}
     >
-      <MainNavigation allMeetups={props.meetupsLength} darkMode={props.darkMode} />
+      <MainNavigation isBigNav={props.isBigNav} allMeetups={props.meetupsLength} darkMode={props.darkMode} />
       <main>
         {props.children}
       </main>
