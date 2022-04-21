@@ -12,12 +12,12 @@ function MeetupList(props) {
 
   const ul = useRef();
   // console.log('ul.current', ul.current?.scrollTop)
-  useEffect(() => {
+  /* useEffect(() => {
     if(!!window.IntersectionObserver) {
       let observer = new IntersectionObserver(entries => { 
         entries.forEach(entry => {
-          /* console.log(entry);
-          console.log(window.scrollY); */
+          // console.log(entry);
+          // console.log(window.scrollY);
           const direction = window.scrollY > saveOldScroll ? 'down' : 'up';
           // console.log('direction', direction);
           if (entry.isIntersecting) {
@@ -33,7 +33,7 @@ function MeetupList(props) {
       });
       document.querySelectorAll('.test-1').forEach(img => { observer.observe(img) });
     }
-  }, []);
+  }, []); */
 
   return (
     <ul className={styles.allMeetups} ref={ul}>

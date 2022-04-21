@@ -34,6 +34,9 @@ function MainNavigation(props) {
       <header
         /* style={{height: dynamicHeaderHeight}} */
         ref={header}
+        /* className={`${styles.header} ${
+          props.darkMode ? styles.darkMode : ""
+        }`} */
         className={`${styles.header} ${
           props.darkMode ? styles.darkMode : ""
         } ${
