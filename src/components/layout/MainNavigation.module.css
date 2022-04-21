@@ -13,7 +13,8 @@
 }
 .header.darkMode {
   background-color: #0a1120;
-  color: #ec5990;
+  /* color: #ec5990; */
+  color: #5561e7;
 }
 .appTitle {
   font-family: 'Gilroy-ExtraBold';
