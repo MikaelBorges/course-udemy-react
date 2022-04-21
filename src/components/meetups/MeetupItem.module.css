@@ -44,11 +44,11 @@
 }
 .actionsLeft {
   display: flex;
-  /* background-color: #ec5990; */
+  /* background-color: #5561e7; */
 }
 .actionsRight {
   display: flex;
-  /* background-color: #ec5990; */
+  /* background-color: #5561e7; */
 }
 .actionsLeft .action {
   margin-left: 20px;
@@ -68,11 +68,11 @@
 }
 .action:hover {
   cursor: pointer;
-  /* background-color: #ec5990; */
+  /* background-color: #5561e7; */
 }
 
 /* .action:hover, .action:active{
-  background-color: #ec5990;
+  background-color: #5561e7;
 } */
 
 /* .action:hover:focus {
@@ -84,11 +84,11 @@
 } */
 
 /* .action:hover, .action:active{
-  background-color: #ec5990;
+  background-color: #5561e7;
 } */
 
 /* .edit:hover {
-  background-color: #ec5990;
+  background-color: #5561e7;
 } */
 
 .action.activeFavorite {
@@ -96,7 +96,7 @@
 }
 
 /* .recycleBin:hover {
-  background-color: #ec5990;
+  background-color: #5561e7;
 } */
 
 .meetupTextPart {
@@ -106,5 +106,6 @@
 }
 
 .meetupTextPart.darkMode {
-  color: #ec5990;
+  /* color: #ec5990; */
+  color: #5561e7; 
 }

@@ -1,6 +1,6 @@
 import styles from './Layout.module.css';
 import MainNavigation from './MainNavigation';
-import logo from '../../images/airvnv_pink.png';
+import logo from '../../images/airvnv_blue.png';
 
 function Layout(props) {
   return (
@@ -10,14 +10,18 @@ function Layout(props) {
       }`}
     >
 
-      <div className={styles.logoContainer}>
-        <img
-          className={styles.logo}
-          src={logo}
-          alt='logo'
-        />
-        <span>airvnv</span>
-      </div>
+    <a
+      href={'/'}
+      title={'Accueil'}
+      className={styles.logoContainer}
+    >
+      <img
+        className={styles.logo}
+        src={logo}
+        alt='logo'
+      />
+      <span>airvnv</span>
+    </a>
 
       <MainNavigation isBigNav={props.isBigNav} allMeetups={props.meetupsLength} darkMode={props.darkMode} />
       <main>
