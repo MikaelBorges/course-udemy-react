@@ -1,6 +1,7 @@
 import styles from './Layout.module.css';
 import MainNavigation from './MainNavigation';
-import logo from '../../images/airvnv_blue.png';
+import logo from '../../images/airvnv_dark.png';
+import logoDark from '../../images/airvnv_blue.png';
 
 function Layout(props) {
   return (
@@ -13,11 +14,13 @@ function Layout(props) {
     <a
       href={'/'}
       title={'Accueil'}
-      className={styles.logoContainer}
+      className={`${styles.logoContainer} ${
+        props.darkMode ? styles.logoContainerDark : ""
+      }`}
     >
       <img
         className={styles.logo}
-        src={logo}
+        src={props.darkMode ? logoDark : logo}
         alt='logo'
       />
       <span>airvnv</span>

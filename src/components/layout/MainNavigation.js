@@ -21,7 +21,7 @@ function MainNavigation(props) {
     const headerHeight = header.current.clientHeight + 'px';
     console.log('headerHeight', headerHeight);
     setDynamicHeaderHeight(headerHeight);
-    window.onscroll = function () {  
+    window.onscroll = function () {
       console.log(window.scrollY);
       let dynamicHeaderHeight = (headerHeight - window.scrollY) + 'px';
       console.log('dynamicHeaderHeight', dynamicHeaderHeight);
@@ -51,7 +51,7 @@ function MainNavigation(props) {
           >
             <li>
               <Link to='/'>Tous les logements</Link>
-              {props.allMeetups ? <Notification navReduced={props.isBigNav} colorOfNotification={false} notification={props.allMeetups} /> : null}
+              {props.allMeetups ? <Notification darkMode={props.darkMode} navReduced={props.isBigNav} colorOfNotification={false} notification={props.allMeetups} /> : null}
             </li>
             <li>
               <Link to='/favorites'>Favoris</Link>

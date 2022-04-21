@@ -20,12 +20,16 @@
   z-index: 1;
   text-decoration: none;
 }
+
 .logoContainer span {
   /* color: #ff5a5f; */
   /* color: #ec5990; */
-  color: #5561e7;
+  color: #2c3e50;
   font-weight: bold;
   font-size: 1.5rem;
+}
+.logoContainer.logoContainerDark span {
+  color: #5561e7; 
 }
 .logo {
   margin: auto;
