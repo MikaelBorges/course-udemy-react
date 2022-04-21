@@ -41,7 +41,7 @@ function MainNavigation(props) {
         }`}
       >
         {props.isBigNav && (
-          <h1 className={styles.appTitle}>Meetups</h1>
+          <h1 className={styles.appTitle}>Logements</h1>
         )}
         <nav>
           <ul
@@ -50,15 +50,15 @@ function MainNavigation(props) {
             }`}
           >
             <li>
-              <Link to='/'>All Meetups</Link>
+              <Link to='/'>Tous les logements</Link>
               {props.allMeetups ? <Notification navReduced={props.isBigNav} colorOfNotification={false} notification={props.allMeetups} /> : null}
             </li>
             <li>
-              <Link to='/favorites'>Favorites</Link>
+              <Link to='/favorites'>Favoris</Link>
               {favoritesCtx.totalFavorites ? <Notification navReduced={props.isBigNav} colorOfNotification={true} notification={favoritesCtx.totalFavorites} /> : null}
             </li>
             <li>
-              <Link to='/new-meetup'>New Meetup</Link>
+              <Link to='/new-meetup'>Nouveau logement</Link>
             </li>
           </ul>
         </nav>

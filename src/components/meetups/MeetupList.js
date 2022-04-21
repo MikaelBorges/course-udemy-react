@@ -22,7 +22,7 @@ function MeetupList(props) {
           // console.log('direction', direction);
           if (entry.isIntersecting) {
             console.log('nav réduite');
-            props.changeNav(false);
+            // props.changeNav(false);
           }
           if (!entry.isIntersecting && direction === 'up') {
             console.log('nav agrandie');

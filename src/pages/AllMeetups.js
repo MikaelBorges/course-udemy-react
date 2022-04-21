@@ -93,13 +93,13 @@ function AllMeetupsPage(props) {
     content = <MeetupList changeNav={props.changeNav} meetups={loadedMeetups} removeMeetup={meetupToRemove} cardView={props.cardView} darkMode={props.darkMode} />;
   }
   else {
-    content = <p>You got no meetup yet. Start adding some ?</p>;
+    content = <p>Il n'y a pas de logements. Commencer à en ajouter un ?</p>;
   }
 
   return (
     <section>
       <Page>
-        <h2 className={styles.pageTitle}>All Meetups Page</h2>
+        <h2 className={styles.pageTitle}>Page de tous les logements</h2>
         <FilterCards darkMode={props.darkMode} />
         {content}
       </Page>

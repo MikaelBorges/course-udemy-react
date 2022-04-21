@@ -10,7 +10,7 @@ function FavoritesPage(props) {
 
   let content;
   if (favoritesCtx.totalFavorites === 0) {
-    content = <p>You got no favorites yet. Start adding some ?</p>;
+    content = <p>Il n'y a pas de favoris. Commencer à en ajouter un ?</p>;
   } else {
     content = <MeetupList meetups={favoritesCtx.favorites} cardView={props.cardView} darkMode={props.darkMode} />;
   }
@@ -18,7 +18,7 @@ function FavoritesPage(props) {
   return (
     <section>
       <Page>
-        <h2 className={styles.pageTitle}>My Favorites Page</h2>
+        <h2 className={styles.pageTitle}>Page des favoris</h2>
         <FilterCards darkMode={props.darkMode} />
         {content}
       </Page>

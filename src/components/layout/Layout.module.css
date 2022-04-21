@@ -13,6 +13,23 @@
   color: #cfd9e4;
 }
 
+.logoContainer {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 1;
+}
+.logoContainer span {
+  /* color: #ff5a5f;  */
+  color: #ec5990;
+  /* color: #5561e7;  */
+}
+.logo {
+  margin: auto;
+  display: block;
+  width: 3rem;
+}
+
 a {
   color: #2c3e50;
   /* color: #cfd9e4; */

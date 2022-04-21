@@ -8,7 +8,7 @@ function FilterCards(props) {
       }`}
     >
       <div className={styles.bar}>
-        filter zone 👷‍♂️
+        zone de filtres 👷‍♂️
       </div>
     </div>
   );
