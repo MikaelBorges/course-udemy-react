@@ -18,11 +18,14 @@
   left: 1rem;
   top: 1rem;
   z-index: 1;
+  text-decoration: none;
 }
 .logoContainer span {
-  /* color: #ff5a5f;  */
-  color: #ec5990;
-  /* color: #5561e7;  */
+  /* color: #ff5a5f; */
+  /* color: #ec5990; */
+  color: #5561e7;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 .logo {
   margin: auto;
@@ -36,7 +39,8 @@ a {
 }
 
 .darkMode a {
-  color: #ec5990;
+  /* color: #ec5990; */
+  color: #5561e7; 
 }
 
 .footer {
