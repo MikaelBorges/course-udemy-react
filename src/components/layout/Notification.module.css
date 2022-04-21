@@ -7,7 +7,8 @@
   border-radius: 50%;
   font-weight: bold;
   /* background-color: #ec5990; */
-  background-color: #5561e7; 
+  /* background-color: #5561e7;  */
+  background-color: #2c3e50;
   width: 40px;
   display: inline-block;
 }
@@ -15,7 +16,9 @@
   width: 20px;
   margin-left: 5px;
 }
-
+.notificationDark {
+  background-color: #5561e7;
+}
 .notificationFavorite {
   background-color: red;
 }
