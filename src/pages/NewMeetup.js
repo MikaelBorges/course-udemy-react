@@ -28,7 +28,7 @@ function NewMeetupPage(props) {
   return (
     <section>
       <Page>
-        <h2 className={styles.pageTitle}>New Meetup Page</h2>
+        <h2 className={styles.pageTitle}>Page d'un nouveau logement</h2>
         <NewMeetupForm onAddMeetup={addMeetupHandler} darkMode={props.darkMode} />
       </Page>
     </section>

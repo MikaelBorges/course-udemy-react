@@ -6,7 +6,6 @@ import FavoritesContext from "../store/favorites-context";
 import FilterCards from "../components/meetups/FilterCards";
 
 function AllMeetupsPage(props) {
-  const [isLoading, setIsLoading] = useState(true);
   const [loadedMeetups, setLoadedMeetups] = useState([]);
   const favoritesCtx = useContext(FavoritesContext);
   let errorMessage;
@@ -47,7 +46,7 @@ function AllMeetupsPage(props) {
       "https://react-getting-started-e49b7-default-rtdb.europe-west1.firebasedatabase.app/meetups.json"
     )
     .then((response) => {
-      console.warn('response', response);
+      // console.warn('response', response);
       if (response.ok) {
         return response.json();
       }
@@ -57,7 +56,7 @@ function AllMeetupsPage(props) {
       throw new Error('Something went wrong');
     })
     .then((data) => {
-      console.log('data', data);
+      // console.log('data', data);
       /* transormation de la data reçue en tableau, sinon ça ne marche pas */
       const meetups = [];
       for (const key in data) {
@@ -68,7 +67,7 @@ function AllMeetupsPage(props) {
         meetups.push(meetup);
       }
 
-      setIsLoading(false);
+      props.changeLoading(false);
       setLoadedMeetups(meetups);
       props.changeMeetups(meetups.length);
     })
@@ -78,7 +77,7 @@ function AllMeetupsPage(props) {
     });
   }, []);
 
-  if (isLoading) {
+  if (props.isLoading) {
     return (
       <section>
         <img
@@ -91,17 +90,17 @@ function AllMeetupsPage(props) {
 
   let content;
   if (loadedMeetups.length) {
-    content = <MeetupList meetups={loadedMeetups} removeMeetup={meetupToRemove} cardView={props.cardView} darkMode={props.darkMode} />;
+    content = <MeetupList changeNav={props.changeNav} meetups={loadedMeetups} removeMeetup={meetupToRemove} cardView={props.cardView} darkMode={props.darkMode} />;
   }
   else {
-    content = <p>You got no meetup yet. Start adding some ?</p>;
+    content = <p>Il n'y a pas de logements. Commencer à en ajouter un ?</p>;
   }
 
   return (
     <section>
       <Page>
-        <h2 className={styles.pageTitle}>All Meetups Page</h2>
-        <FilterCards />
+        <h2 className={styles.pageTitle}>Page de tous les logements</h2>
+        <FilterCards darkMode={props.darkMode} />
         {content}
       </Page>
     </section>

@@ -9,13 +9,18 @@ import "./fonts.css";
 
 function App() {
   const [totalMeetups, setTotalMeetups] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isBigNav, setIsBigNav] = useState(true);
+  const [cardViewButton, setCardViewButton] = useState(true);
+  const [themeViewButton, setThemeCardViewButton] = useState(true);
 
   function changeStateMeetups(meetupsNumber) {
     setTotalMeetups(meetupsNumber);
   }
 
-  const [cardViewButton, setCardViewButton] = useState(true);
-  const [themeViewButton, setThemeCardViewButton] = useState(true);
+  function changeStateLoading(stateOfLoad) {
+    setIsLoading(stateOfLoad);
+  }
 
   function cardViewToggle() {
     setCardViewButton(!cardViewButton);
@@ -26,19 +31,25 @@ function App() {
     
   }
 
+  function changeStateNav(stateOfNav) {
+    setIsBigNav(stateOfNav);
+  }
+
   return (
-    <Layout meetupsLength={totalMeetups} darkMode={themeViewButton}>
+    <Layout isBigNav={isBigNav} isLoading={isLoading} meetupsLength={totalMeetups} darkMode={themeViewButton}>
       <Switch>
         <Route path='/' exact>
           <button
             className={`${styles.toggleButton} ${styles.toggleCardView} ${
               themeViewButton ? styles.darkMode : ""
+            } ${
+              cardViewButton ? "" : styles.withText
             }`}
             onClick={cardViewToggle}
           >
-            {cardViewButton ? '🏞' : '🪪'}
+            {cardViewButton ? '🏞' : '🏞 + A'}
           </button>
-          <AllMeetupsPage changeMeetups={changeStateMeetups} cardView={cardViewButton} darkMode={themeViewButton} />
+          <AllMeetupsPage changeNav={changeStateNav} changeLoading={changeStateLoading} changeMeetups={changeStateMeetups} cardView={cardViewButton} darkMode={themeViewButton} />
           <button
             className={`${styles.toggleButton} ${styles.toggleThemeView} ${
               themeViewButton ? styles.darkMode : ""
@@ -49,10 +60,46 @@ function App() {
           </button>
         </Route>
         <Route path='/new-meetup'>
+          <button
+            className={`${styles.toggleButton} ${styles.toggleCardView} ${
+              themeViewButton ? styles.darkMode : ""
+            } ${
+              cardViewButton ? "" : styles.withText
+            }`}
+            onClick={cardViewToggle}
+          >
+            {cardViewButton ? '🏞' : '🏞 + A'}
+          </button>
           <NewMeetupPage darkMode={themeViewButton} />
+          <button
+            className={`${styles.toggleButton} ${styles.toggleThemeView} ${
+              themeViewButton ? styles.darkMode : ""
+            }`}
+            onClick={themeViewToggle}
+          >
+            {themeViewButton ? '🌞' : '🌚'}
+          </button>
         </Route>
         <Route path='/favorites'>
+          <button
+            className={`${styles.toggleButton} ${styles.toggleCardView} ${
+              themeViewButton ? styles.darkMode : ""
+            } ${
+              cardViewButton ? "" : styles.withText
+            }`}
+            onClick={cardViewToggle}
+          >
+            {cardViewButton ? '🏞' : '🏞 + A'}
+          </button>
           <FavoritesPage cardView={cardViewButton} darkMode={themeViewButton} />
+          <button
+            className={`${styles.toggleButton} ${styles.toggleThemeView} ${
+              themeViewButton ? styles.darkMode : ""
+            }`}
+            onClick={themeViewToggle}
+          >
+            {themeViewButton ? '🌞' : '🌚'}
+          </button>
         </Route>
       </Switch>
     </Layout>

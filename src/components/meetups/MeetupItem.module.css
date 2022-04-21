@@ -6,7 +6,8 @@
 }
 
 .meetupTextPart .meetupTextElement {
-  margin-top: 20px;
+  margin: 20px 0;
+  font-size: 1em;
 }
 
 /* .meetupCard {
@@ -35,43 +36,36 @@
 }
 
 .actions {
-  /* border-radius: 10px; */
   position: absolute;
-  bottom: -19px;
+  bottom: -34px;
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 .actionsLeft {
-  /* padding: 10px;
-  border-radius: 10px; */
   display: flex;
   /* background-color: #ec5990; */
 }
 .actionsRight {
-  /* padding: 10px;
-  border-radius: 10px; */
   display: flex;
   /* background-color: #ec5990; */
 }
 .actionsLeft .action {
-  margin-left: 10px;
+  margin-left: 20px;
 }
 .actionsRight .action {
-  margin-right: 10px;
+  margin-right: 20px;
 }
 .action {
   border-radius: 50%;
-  /* border: none; */
-  /* margin-left: 5px; */
-  font-size: 20px;
   background-color: white;
   border: none;
-  padding: 8px 11px;
-
+  padding: 18px 22px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-
+.action.darkMode {
+  background-color: #0a1120;
+}
 .action:hover {
   cursor: pointer;
   /* background-color: #ec5990; */
@@ -97,8 +91,8 @@
   background-color: #ec5990;
 } */
 
-.activeFavorite {
-  background-color: #ec5990;
+.action.activeFavorite {
+  background-color: red;
 }
 
 /* .recycleBin:hover {
@@ -107,7 +101,7 @@
 
 .meetupTextPart {
   padding: 20px;
-  color: black;
+  /* color: #2c3e50; */
   font-family: 'Gilroy-Light';
 }
 

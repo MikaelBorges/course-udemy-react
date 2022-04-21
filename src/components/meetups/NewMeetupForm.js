@@ -1,6 +1,6 @@
 import styles from './NewMeetupForm.module.css';
 import Card from "../ui/Card";
-import { useRef } from "react";
+import { useRef, useState} from "react";
 
 function NewMeetupForm(props) {
 
@@ -27,6 +27,27 @@ function NewMeetupForm(props) {
     props.onAddMeetup(meetupData);
   }
 
+  const [titleLabelAnimated, setTitleLabelAnimated] = useState(false);
+  const [imageLabelAnimated, setImageLabelAnimated] = useState(false);
+  const [addressLabelAnimated, setAddressLabelAnimated] = useState(false);
+  const [descriptionLabelAnimated, setDescriptionLabelAnimated] = useState(false);
+
+  function handleTitleField() {
+    setTitleLabelAnimated(true);
+  }
+
+  function handleImageField() {
+    setImageLabelAnimated(true);
+  }
+
+  function handleAddresssField() {
+    setAddressLabelAnimated(true);
+  }
+
+  function handleDescriptionField() {
+    setDescriptionLabelAnimated(true);
+  }
+
   return (
     <Card>
       <form
@@ -36,27 +57,65 @@ function NewMeetupForm(props) {
         onSubmit={submitHandler}
       >
 
-        <div>
-          <label htmlFor="title">Meetup Title</label>
-          <input type="text" id="title" ref={titleInputRef} />
+        <div className={styles.blockField}>
+          <div className={styles.labelContainer}>
+            <label
+              htmlFor="title"
+              className={`${
+                titleLabelAnimated ? styles.animated : ""
+              }`}
+            >
+              Title
+            </label>
+          </div>
+          <input onClick={handleTitleField} type="text" id="title" ref={titleInputRef} />
         </div>
 
-        <div>
-          <label htmlFor="image">Meetup Image</label>
-          <input type="url" required id="image" ref={imageInputRef} />
+        <div className={styles.blockField}>
+          <div className={styles.labelContainer}>
+            <label
+              htmlFor="image"
+              className={`${
+                imageLabelAnimated ? styles.animated : ""
+              }`}
+            >
+              Image
+            </label>
+          </div>
+          <input onClick={handleImageField} type="url" required id="image" ref={imageInputRef} />
         </div>
 
-        <div>
-          <label htmlFor="address">Address</label>
-          <input type="text" id="address" ref={addressInputRef} />
+        <div className={styles.blockField}>
+          <div className={styles.labelContainer}>
+            <label
+              htmlFor="address"
+              className={`${
+                addressLabelAnimated ? styles.animated : ""
+              }`}
+            >
+              Address
+            </label>
+          </div>
+          <input onClick={handleAddresssField} type="text" id="address" ref={addressInputRef} />
         </div>
 
-        <div>
-          <label htmlFor="description">Description</label>
-          <textarea rows="6" id="description" ref={descriptionInputRef}></textarea>
+        <div className={styles.blockField}>
+          <div className={styles.labelContainer}>
+            <label
+              htmlFor="description"
+              className={`${
+                descriptionLabelAnimated ? styles.animated : ""
+              }`}
+            >
+              Description
+            </label>
+          </div>
+          <textarea onClick={handleDescriptionField} rows="6" id="description" ref={descriptionInputRef}></textarea>
         </div>
 
-        <button className={styles.addMeetup}>Add meetup</button>
+        <button className={`${styles.addMeetup} ${
+          props.darkMode ? styles.darkMode : ""
+        }`}>Envoyer 📤</button>
 
       </form>
     </Card>
