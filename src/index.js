@@ -8,7 +8,7 @@ import { FavoritesContextProvider } from './store/favorites-context';
 
 ReactDOM.render(
   <FavoritesContextProvider>
-    <BrowserRouter>
+    <BrowserRouter basename="/projects/react-course">
       <React.StrictMode>
         <App />
       </React.StrictMode>
