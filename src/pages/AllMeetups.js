@@ -13,9 +13,9 @@ function AllMeetupsPage(props) {
   function meetupToRemove(id) {
     /* Supprime meetup en base */
     fetch(
-      "https://react-getting-started-e49b7-default-rtdb.europe-west1.firebasedatabase.app/meetups.json" +
-        id +
-        ".json",
+      //"https://react-getting-started-e49b7-default-rtdb.europe-west1.firebasedatabase.app/meetups.json"
+      "https://airvnv-e3b58-default-rtdb.europe-west1.firebasedatabase.app/meetups.json"
+      + id + ".json",
       {
         method: "DELETE",
         headers: {
@@ -43,7 +43,8 @@ function AllMeetupsPage(props) {
 
   useEffect(() => {
     fetch(
-      "https://react-getting-started-e49b7-default-rtdb.europe-west1.firebasedatabase.app/meetups.json"
+      //"https://react-getting-started-e49b7-default-rtdb.europe-west1.firebasedatabase.app/meetups.json"
+      "https://airvnv-e3b58-default-rtdb.europe-west1.firebasedatabase.app/meetups.json"
     )
     .then((response) => {
       // console.warn('response', response);
