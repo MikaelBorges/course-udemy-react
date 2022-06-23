@@ -8,8 +8,8 @@ function NewMeetupPage(props) {
 
   function addMeetupHandler(meetupData) {
     fetch(
-      //"https://react-getting-started-e49b7-default-rtdb.europe-west1.firebasedatabase.app/meetups.json",
-      "https://airvnv-3eade-default-rtdb.europe-west1.firebasedatabase.app/meetups.json",
+      //"https://airvnv-3eade-default-rtdb.europe-west1.firebasedatabase.app/meetups.json",
+      "https://airvnv-1a374-default-rtdb.europe-west1.firebasedatabase.app/meetups.json",
       {
         method: "POST",
         body: JSON.stringify(meetupData),
